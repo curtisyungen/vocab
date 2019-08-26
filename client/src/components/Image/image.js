@@ -27,7 +27,7 @@ class Image extends Component {
     getImageURL = () => {
         let imageURL = this.props.word.imageURL;
 
-        if (imageURL === null || imageURL.length < 5) {
+        if (imageURL === null || imageURL === "") {
             imageURL = "https://via.placeholder.com/150";
         }
 
