@@ -56,7 +56,7 @@ class Sentence extends Component {
         return (
             <div className="sentenceContainer">
                 <div className="sentence">
-                    {this.props.word.sentence}
+                    {this.state.sentence}
                 </div>
 
                 {/* UPDATE SENTENCE */}
@@ -86,7 +86,7 @@ class Sentence extends Component {
                             </div>
                             <div className="form-group">
                                 <button
-                                    className="btn btn-warning btn-sm cancelSentenceBtn"
+                                    className="btn btn-danger btn-sm cancelSentenceBtn"
                                     onClick={(event) => {
                                         event.preventDefault();
                                         this.cancelUpdate();
