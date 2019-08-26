@@ -119,6 +119,15 @@ class App extends Component {
           <p className="text-center">Loading...</p>
         )}
 
+        {/* SENTENCE DISPLAY */}
+        {this.state.words && this.state.words.length > 0 ? (
+          <Sentence 
+            word={this.state.words[this.state.count]}
+          />
+        ) : (
+          <></>
+        )}
+
         {/* RIGHT ANSWERS */}
         <div className="right">
           {this.state.right && this.state.right.length > 0 ? (
