@@ -42,6 +42,8 @@ class Sentence extends Component {
         let word = this.props.word;
         let sentence = this.state.sentence;
 
+        console.log(word, sentence);
+
         wordsAPI.updateSentence(word, sentence)
             .then((res) => {
                 console.log(res);
@@ -55,10 +57,6 @@ class Sentence extends Component {
     render() {
         return (
             <div className="sentenceContainer">
-                <div className="sentence">
-                    {this.state.sentence}
-                </div>
-
                 {/* UPDATE SENTENCE */}
                 {this.state.update ? (
                     <span>
@@ -98,12 +96,17 @@ class Sentence extends Component {
                         </form>
                     </span>
                 ) : (
-                    <button
-                        className="btn btn-dark btn-sm changeSentenceBtn"
-                        onClick={this.updateSentence}
-                    >
-                        Change
-                    </button>
+                    <span>
+                        <div className="sentence">
+                            {this.state.sentence}
+                        </div>
+                        <button
+                            className="btn btn-dark btn-sm changeSentenceBtn"
+                            onClick={this.updateSentence}
+                        >
+                            Change
+                        </button>
+                    </span>
                 )}
             </div>
         )
