@@ -15,23 +15,25 @@ class Image extends Component {
     }
 
     componentDidMount = () => {
+        this.getImageURL();
+    }
+
+    componentDidUpdate = (prevProps) => {
+        if (prevProps.word.imageURL !== this.props.word.imageURL) {
+            this.getImageURL();
+        }
+    }
+
+    getImageURL = () => {
         let imageURL = this.props.word.imageURL;
 
-        if (imageURL === null && imageURL.length < 5) {
+        if (imageURL === null || imageURL.length < 5) {
             imageURL = "https://via.placeholder.com/150";
         }
 
         this.setState({
             imageURL: imageURL,
         });
-    }
-
-    componentDidUpdate = (prevProps) => {
-        if (prevProps.word.imageURL !== this.props.word.imageURL) {
-            this.setState({
-                imageURL: this.props.word.imageURL,
-            });
-        }
     }
 
     handleInputChange = (event) => {
