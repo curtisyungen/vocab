@@ -155,6 +155,7 @@ class App extends Component {
 
         {/* RIGHT ANSWERS */}
         <div className="right">
+          <div className="rightLabel">Right</div>
           {this.state.right && this.state.right.length > 0 ? (
             this.state.right.map(right => (
               <div key={right}>
@@ -168,6 +169,7 @@ class App extends Component {
 
         {/* WRONG ANSWERS */}
         <div className="wrong">
+          <div className="wrongLabel">Wrong</div>
           {this.state.wrong && this.state.wrong.length > 0 ? (
             this.state.wrong.map(wrong => (
               <div key={wrong}>
