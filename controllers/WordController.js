@@ -49,6 +49,20 @@ class WordController {
         });
     }
 
+    updateImage(req, res) {
+        db.Words.update(
+            {imageURL: req.body.imageURL},
+            {where: {
+                word: req.body.word
+            }})
+            .then((word) => {
+                res.json(word);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
     updateSentence(req, res) {
         db.Words.update(
             {sentence: req.body.sentence},
