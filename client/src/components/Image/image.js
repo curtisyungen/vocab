@@ -121,19 +121,19 @@ class Image extends Component {
                                     src={`${this.state.imageURL}`}
                                     alt="word"
                                 />
-                            </div>
 
-                            {/* CHANGE BUTTON */}
-                            {this.state.showChangeBtn ? (
-                                <div 
-                                    className="changeImageBtn"
-                                    onClick={this.updateImage}
-                                >
-                                    Change
+                                {/* CHANGE BUTTON */}
+                                {this.state.showChangeBtn ? (
+                                    <div
+                                        className="changeImageBtn"
+                                        onClick={this.updateImage}
+                                    >
+                                        Change
                                 </div>
-                            ) : (
-                                <></>
-                            )}
+                                ) : (
+                                        <></>
+                                    )}
+                            </div>
                         </span>
                     )}
             </span>
