@@ -3,6 +3,8 @@
 }
 
 .choice:hover {
-    color: rgb(61, 61, 61);
+    background: gold;
     font-weight: 700;
+    margin: 5px auto 0px auto;
+    width: 300px;
 }
