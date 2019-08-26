@@ -38,7 +38,7 @@ class Sentence extends Component {
         });
     }
 
-    submitSentence = () => {
+    saveSentence = () => {
         let word = this.props.word;
         let sentence = this.state.sentence;
 
@@ -61,16 +61,42 @@ class Sentence extends Component {
 
                 {/* UPDATE SENTENCE */}
                 {this.state.update ? (
-                    <button
-                        className="btn btn-success btn-sm saveSentenceBtn"
-                    >
-                        Save
-                    </button>
-                    <button
-                        className="btn btn-warning btn-sm cancelSentenceBtn"
-                    >
-                        Cancel
-                    </button>
+                    <span>
+                        <form>
+                            <div className="form-group">
+                                <input 
+                                    name="sentence"
+                                    type="text"
+                                    className="form-control sentenceInput"
+                                    onChange={this.handleInputChange}
+                                    defaultValue={this.state.sentence}
+                                    autoComplete="off"
+                                />
+                            </div>
+                            <div className="form-group">
+                                <button
+                                    className="btn btn-success btn-sm saveSentenceBtn"
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        this.saveSentence();
+                                    }}
+                                >
+                                    Save
+                                </button>
+                            </div>
+                            <div className="form-group">
+                                <button
+                                    className="btn btn-warning btn-sm cancelSentenceBtn"
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        this.cancelUpdate();
+                                    }}
+                               >
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </span>
                 ) : (
                     <button
                         className="btn btn-dark btn-sm changeSentenceBtn"
