@@ -1,10 +1,9 @@
 .choice {
     cursor: pointer;
+    margin: 5px auto 0px auto;
+    width: 300px;
 }
 
 .choice:hover {
     background: gold;
-    font-weight: 700;
-    margin: 5px auto 0px auto;
-    width: 300px;
 }
