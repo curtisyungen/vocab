@@ -18,6 +18,14 @@ class Sentence extends Component {
         });
     }
 
+    componentDidUpdate = (prevProps) => {
+        if (prevProps.word.sentence !== this.props.word.sentence) {
+            this.setState({
+                sentence: this.props.word.sentence,
+            });
+        }
+    }
+
     handleInputChange = (event) => {
         const {name, value} = event.target;
 
@@ -41,8 +49,6 @@ class Sentence extends Component {
     saveSentence = () => {
         let word = this.props.word.word;
         let sentence = this.state.sentence;
-
-        console.log(word, sentence);
 
         wordsAPI.updateSentence(word, sentence)
             .then((res) => {
