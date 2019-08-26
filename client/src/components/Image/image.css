@@ -12,22 +12,22 @@
     color: white;
     cursor: pointer;
     font-size: 24px;
-    height: 200px;
+    height: 300px;
     left: 50%;
     margin-top: 3px;
     opacity: 0.8;
     padding-top: 75px;
     position: absolute;
     transform: translate(-50%);
-    width: 250px;
+    width: 100%;
 }
 
 .image {
     border: 3px solid black;
     color: black;
-    height: 200px;
+    height: 300px;
     margin: 5px auto;
-    width: 250px;
+    width: 100%;
 }
 
 .imageInput {
