@@ -117,19 +117,19 @@ class Image extends Component {
                                 <img
                                     className="image"
                                     onMouseEnter={this.showChangeBtn}
-                                    onMouseExit={this.hideChangeBtn}
+                                    onMouseLeave={this.hideChangeBtn}
                                     src={`${this.state.imageURL}`}
                                     alt="word"
                                 />
 
                                 {/* CHANGE BUTTON */}
                                 {this.state.showChangeBtn ? (
-                                    <div
+                                    <span
                                         className="changeImageBtn"
                                         onClick={this.updateImage}
                                     >
                                         Change
-                                </div>
+                                    </span>
                                 ) : (
                                         <></>
                                     )}
