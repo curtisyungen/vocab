@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Word from "./components/Word/word";
 import Sentence from "./components/Sentence/sentence";
+import Image from "./components/Image/image";
 import wordsAPI from "./utils/wordsAPI";
 import './App.css';
 
@@ -108,6 +109,15 @@ class App extends Component {
   render() {
     return (
       <div className="home text-center">
+
+        {/* IMAGE DISPLAY */}
+        {this.state.words && this.state.words.length > 0 ? (
+          <Image
+            word={this.state.words[this.state.count]}
+          />
+        ) : (
+          <></>
+        )}
 
         {/* WORD DISPLAY */}
         {this.state.words && this.state.words.length > 0 ? (
