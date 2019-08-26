@@ -1,0 +1,8 @@
+.choice {
+    cursor: pointer;
+}
+
+.choice:hover {
+    color: rgb(61, 61, 61);
+    font-weight: 700;
+}

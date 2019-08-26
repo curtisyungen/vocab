@@ -1,0 +1,11 @@
+.word {
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.wordContainer {
+    background: lightgray;
+    padding: 15px;
+    width: 100%;
+}
