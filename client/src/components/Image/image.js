@@ -67,6 +67,12 @@ class Image extends Component {
                                     src=""
                                     alt="word"
                                 />
+                                <button 
+                                    className="btn btn-outline-dark btn-sm changeImageBtn"
+                                    onClick={this.updateImage}
+                                >
+                                    Change
+                                </button>
                             </div>
                         </span>
                     )}

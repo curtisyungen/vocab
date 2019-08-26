@@ -1,3 +1,8 @@
+.changeImageBtn {
+    float: right;
+    font-size: 12px;
+}
+
 .image {
     color: black;
 }
