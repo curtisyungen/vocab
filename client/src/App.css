@@ -17,12 +17,14 @@ html {
 
 .right {
   background: lightgreen;
-  float: right;
+  float: left;
   padding: 10px;
+  width: 250px;
 }
 
 .wrong {
   background: rgb(255, 174, 174);
-  float: left;
+  float: right;
   padding: 10px;
+  width: 250px;
 }
