@@ -19,6 +19,10 @@ html {
   width: 500px;
 }
 
+.mainSection {
+  min-height: 200px;
+}
+
 .playAgainBtn {
   width: 200px;
 }

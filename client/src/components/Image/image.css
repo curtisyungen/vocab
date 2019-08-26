@@ -8,18 +8,17 @@
 }
 
 .changeImageBtn {
-    background: rgb(61, 61, 61);
-    color: white;
+    background: rgb(242, 242, 242);
+    color: black;
     cursor: pointer;
-    font-size: 24px;
-    height: 300px;
+    font-size: 14px;
+    height: 35px;
     left: 50%;
-    margin-top: 3px;
+    margin-top: 10x;
     opacity: 0.8;
-    padding-top: 75px;
     position: absolute;
     transform: translate(-50%);
-    width: 300px;
+    width: 75px;
 }
 
 .image {

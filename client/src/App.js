@@ -119,26 +119,30 @@ class App extends Component {
           <></>
         )}
 
-        {/* PLAY AGAIN BUTTON */}
-        {this.state.complete ? (
-          <button
-            className="btn btn-warning playAgainBtn"
-            onClick={this.newGame}
-          >
-            Replay
-          </button>
-        ) : (
-          // WORD DISPLAY
-          this.state.words && this.state.words.length > 0 ? (
-            <Word 
-              word={this.state.words[this.state.count]}
-              addRight={this.addRight}
-              addWrong={this.addWrong}
-            />
+        <div className="mainSection">
+
+          {/* PLAY AGAIN BUTTON */}
+          {this.state.complete ? (
+            <button
+              className="btn btn-warning playAgainBtn"
+              onClick={this.newGame}
+            >
+              Replay
+            </button>
           ) : (
-            <p className="text-center">Loading...</p>
-          )
-        )}
+            // WORD DISPLAY
+            this.state.words && this.state.words.length > 0 ? (
+              <Word 
+                word={this.state.words[this.state.count]}
+                addRight={this.addRight}
+                addWrong={this.addWrong}
+              />
+            ) : (
+              <p className="text-center">Loading...</p>
+            )
+          )}
+          
+        </div>
 
         {/* SENTENCE DISPLAY */}
         {this.state.words && this.state.words.length > 0 ? (
