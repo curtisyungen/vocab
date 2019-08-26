@@ -6,6 +6,7 @@
 
 .wordContainer {
     background: lightgray;
+    min-height: 250px;
     padding: 15px;
     width: 100%;
 }
