@@ -1,3 +1,9 @@
+.cancelImageBtn,
+.saveImageBtn {
+    float: right;
+    font-size: 12px;
+}
+
 .changeImageBtn {
     background: rgb(61, 61, 61);
     color: white;
@@ -21,8 +27,11 @@
     width: 250px;
 }
 
-.cancelImageBtn,
-.saveImageBtn {
-    float: right;
-    font-size: 12px;
+.imageInput {
+    font-size: 13px;
+    width: 300px;
+}
+
+.imageModal {
+    margin-top: 15px;
 }
