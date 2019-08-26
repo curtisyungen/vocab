@@ -15,8 +15,14 @@ class Image extends Component {
     }
 
     componentDidMount = () => {
+        let imageURL = this.props.word.imageURL;
+
+        if (imageURL === null && imageURL.length < 5) {
+            imageURL = "https://via.placeholder.com/150";
+        }
+
         this.setState({
-            imageURL: this.props.word.imageURL,
+            imageURL: imageURL,
         });
     }
 
@@ -106,7 +112,7 @@ class Image extends Component {
                                 >
                                     Save
                                 </button>
-                                
+
                                 <button
                                     className="btn btn-danger btn-sm cancelImageBtn"
                                     onClick={(event) => {
