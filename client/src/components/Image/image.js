@@ -62,9 +62,10 @@ class Image extends Component {
                     />
                 ) : (
                         <span>
-                            <div className="image">
+                            <div className="imageContainer">
                                 <img
-                                    src=""
+                                    className="image"
+                                    src={`${this.state.imageURL}`}
                                     alt="word"
                                 />
                                 <button 
