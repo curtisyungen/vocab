@@ -67,6 +67,7 @@ class Sentence extends Component {
                 {this.state.update ? (
                     <span>
                         <form>
+                            {/* INPUT */}
                             <div className="form-group">
                                 <input 
                                     name="sentence"
@@ -78,6 +79,7 @@ class Sentence extends Component {
                                 />
                             </div>
                             <div className="form-group">
+                                {/* SAVE */}
                                 <button
                                     className="btn btn-success btn-sm saveSentenceBtn"
                                     onClick={(event) => {
@@ -87,8 +89,8 @@ class Sentence extends Component {
                                 >
                                     Save
                                 </button>
-                            </div>
-                            <div className="form-group">
+
+                                {/* CANCEL */}
                                 <button
                                     className="btn btn-danger btn-sm cancelSentenceBtn"
                                     onClick={(event) => {
@@ -103,15 +105,18 @@ class Sentence extends Component {
                     </span>
                 ) : (
                     <span>
+                        {/* SENTENCE */}
                         <div className="sentence">
                             {this.state.sentence}
+
+                            {/* CHANGE */}
+                            <button
+                                className="btn btn-dark btn-sm changeSentenceBtn"
+                                onClick={this.updateSentence}
+                            >
+                                Change
+                            </button>
                         </div>
-                        <button
-                            className="btn btn-dark btn-sm changeSentenceBtn"
-                            onClick={this.updateSentence}
-                        >
-                            Change
-                        </button>
                     </span>
                 )}
             </div>
