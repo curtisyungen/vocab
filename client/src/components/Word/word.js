@@ -44,6 +44,10 @@ class Word extends Component {
             wrong.splice(randIdx, 1);
         }
 
+        this.setState({
+            rightChoice: rightChoice,
+        });
+
         this.shuffleChoices(choices);
     }
 
