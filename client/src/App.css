@@ -18,6 +18,6 @@ html {
 
 .wrong {
   background: rgb(255, 174, 174);
-  float: right;
+  float: left;
   padding: 10px;
 }
