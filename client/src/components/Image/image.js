@@ -19,7 +19,7 @@ class Image extends Component {
     }
 
     handleInputChange = (event) => {
-        const {name, value} = event.target;
+        const { name, value } = event.target;
 
         this.setState({
             [name]: value,
@@ -52,23 +52,50 @@ class Image extends Component {
         return (
             <span>
                 {this.state.update ? (
-                    <input
-                        name="imageURL"
-                        type="text"
-                        className="imageInput"
-                        onChange={this.handleInputChange}
-                        defaultValue={this.state.imageURL}
-                        autoComplete="off"
-                    />
+                    <span>
+                        {/* IMAGE URL INPUT */}
+                        <input
+                            name="imageURL"
+                            type="text"
+                            className="imageInput"
+                            onChange={this.handleInputChange}
+                            defaultValue={this.state.imageURL}
+                            autoComplete="off"
+                        />
+
+                        {/* CANCEL */}
+                        <button
+                            className="btn btn-danger btn-sm cancelImageBtn"
+                            onClick={(event) => {
+                                event.preventDefault();
+                                this.cancelUpdate();
+                            }}
+                        >
+                            Cancel
+                        </button>
+
+                        {/* SAVE */}
+                        <button
+                            className="btn btn-success btn-sm saveImageBtn"
+                            onClick={(event) => {
+                                event.preventDefault();
+                                this.saveImage();
+                            }}
+                        >
+                            Save
+                        </button>
+                    </span>
                 ) : (
                         <span>
                             <div className="imageContainer">
+                                {/* IMAGE */}
                                 <img
                                     className="image"
                                     src={`${this.state.imageURL}`}
                                     alt="word"
                                 />
-                                <button 
+                                {/* CHANGE BUTTON */}
+                                <button
                                     className="btn btn-outline-dark btn-sm changeImageBtn"
                                     onClick={this.updateImage}
                                 >
