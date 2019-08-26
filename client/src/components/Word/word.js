@@ -38,15 +38,27 @@ class Word extends Component {
 
         // Get Wrong Choices
         let wrong = JSON.parse(this.props.word.wrong);
-        for (var i=0; i<4; i++) {
+        for (var i=0; i<3; i++) {
             randIdx=Math.floor(Math.random() * wrong.length);
             choices.push(wrong[randIdx]);
             wrong.splice(randIdx, 1);
         }
 
+        this.shuffleChoices(choices);
+    }
+
+    shuffleChoices = (choices) => {
+        let rand;
+        let temp;
+        for (var i=choices.length - 1; i>0; i--) {
+          rand = Math.floor(Math.random() * (i + 1));
+          temp = choices[i];
+          choices[i] = choices[rand];
+          choices[rand] = temp;
+        }
+
         this.setState({
             choices: choices,
-            rightChoice: rightChoice,
         });
     }
 
