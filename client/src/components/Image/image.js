@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Modal from "react-responsive-modal";
 import wordsAPI from "../../utils/wordsAPI";
 import "./image.css";
 
@@ -77,7 +78,10 @@ class Image extends Component {
         return (
             <span>
                 {this.state.update ? (
-                    <span>
+                    <Modal
+                        open={this.state.update}
+                        onClose={this.cancelUpdate}
+                    >
                         {/* IMAGE URL INPUT */}
                         <input
                             name="imageURL"
@@ -109,35 +113,35 @@ class Image extends Component {
                         >
                             Save
                         </button>
-                    </span>
+                    </Modal>
                 ) : (
-                        <span>
-                            <div 
-                                className="imageContainer"
-                                onMouseEnter={this.showChangeBtn}
-                                onMouseLeave={this.hideChangeBtn}
-                            >
-                                {/* IMAGE */}
-                                <img
-                                    className="image"
-                                    src={`${this.state.imageURL}`}
-                                    alt="word"
-                                />
+                    <></>
+                )}
 
-                                {/* CHANGE BUTTON */}
-                                {this.state.showChangeBtn ? (
-                                    <span
-                                        className="changeImageBtn"
-                                        onClick={this.updateImage}
-                                    >
-                                        Change
-                                    </span>
-                                ) : (
-                                        <></>
-                                    )}
-                            </div>
+                <div
+                    className="imageContainer"
+                    onMouseEnter={this.showChangeBtn}
+                    onMouseLeave={this.hideChangeBtn}
+                >
+                    {/* IMAGE */}
+                    <img
+                        className="image"
+                        src={`${this.state.imageURL}`}
+                        alt="word"
+                    />
+
+                    {/* CHANGE BUTTON */}
+                    {this.state.showChangeBtn ? (
+                        <span
+                            className="changeImageBtn"
+                            onClick={this.updateImage}
+                        >
+                            Change
                         </span>
+                    ) : (
+                        <></>
                     )}
+                </div>
             </span>
         )
     }
