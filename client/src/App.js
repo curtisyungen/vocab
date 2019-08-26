@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Word from "./components/Word/word";
+import Sentence from "./components/Sentence/sentence";
 import wordsAPI from "./utils/wordsAPI";
 import './App.css';
 
