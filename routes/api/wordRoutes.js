@@ -14,8 +14,8 @@ router.post("/addWord", (req, res) => {
     controller.addWord(req, res);
 });
 
-router.put("/updateWord", (req, res) => {
-    controller.updateWord(req, res);
+router.put("/updateSentence", (req, res) => {
+    controller.updateSentence(req, res);
 });
 
 router.delete("/deleteWord", (req, res) => {
