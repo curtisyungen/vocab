@@ -17,6 +17,10 @@ export default {
         return axios.post("/api/words/addWord", {word: word});
     },
 
+    updateSentence: function(word, sentence) {
+        return axios.put("/api/words/updateSentence", {word: word, sentence: sentence});
+    },
+
     deleteWord: function(word) {
         return axios.delete("/api/words/deleteWord", {word: word});
     },
