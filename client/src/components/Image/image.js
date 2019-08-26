@@ -112,12 +112,14 @@ class Image extends Component {
                     </span>
                 ) : (
                         <span>
-                            <div className="imageContainer">
+                            <div 
+                                className="imageContainer"
+                                onMouseEnter={this.showChangeBtn}
+                                onMouseLeave={this.hideChangeBtn}
+                            >
                                 {/* IMAGE */}
                                 <img
                                     className="image"
-                                    onMouseEnter={this.showChangeBtn}
-                                    onMouseLeave={this.hideChangeBtn}
                                     src={`${this.state.imageURL}`}
                                     alt="word"
                                 />
