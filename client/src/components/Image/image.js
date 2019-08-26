@@ -28,7 +28,7 @@ class Image extends Component {
         let imageURL = this.props.word.imageURL;
 
         if (imageURL === null || imageURL === "") {
-            imageURL = "https://via.placeholder.com/150";
+            imageURL = "https://via.placeholder.com/300";
         }
 
         this.setState({
