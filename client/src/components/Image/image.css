@@ -1,7 +1,10 @@
 .cancelImageBtn,
 .saveImageBtn {
-    float: right;
     font-size: 12px;
+}
+
+.cancelImageBtn {
+    margin-left: 3px;
 }
 
 .changeImageBtn {
@@ -29,9 +32,13 @@
 
 .imageInput {
     font-size: 13px;
-    width: 300px;
+    width: 350px;
 }
 
 .imageModal {
     margin-top: 15px;
+}
+
+.imageModalBtns {
+    float: right;
 }
