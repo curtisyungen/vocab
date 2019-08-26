@@ -119,16 +119,28 @@ class App extends Component {
           <></>
         )}
 
-        {/* WORD DISPLAY */}
-        {this.state.words && this.state.words.length > 0 ? (
-          <Word 
-            word={this.state.words[this.state.count]}
-            addRight={this.addRight}
-            addWrong={this.addWrong}
-          />
+        {/* PLAY AGAIN BUTTON */}
+        {this.state.complete ? (
+          <button
+            className="btn btn-warning playAgainBtn"
+            onClick={this.newGame}
+          >
+            Replay
+          </button>
         ) : (
-          <p className="text-center">Loading...</p>
+          // WORD DISPLAY
+          this.state.words && this.state.words.length > 0 ? (
+            <Word 
+              word={this.state.words[this.state.count]}
+              addRight={this.addRight}
+              addWrong={this.addWrong}
+            />
+          ) : (
+            <p className="text-center">Loading...</p>
+          )
         )}
+
+
 
         {/* SENTENCE DISPLAY */}
         {this.state.words && this.state.words.length > 0 ? (
@@ -164,18 +176,6 @@ class App extends Component {
             <></>
           )}
         </div>
-
-        {/* PLAY AGAIN BUTTON */}
-        {this.state.complete ? (
-          <button
-            className="btn btn-success btn-sm playAgainBtn"
-            onClick={this.newGame}
-          >
-            Replay
-          </button>
-        ) : (
-          <></>
-        )}
       </div>
     )
   }

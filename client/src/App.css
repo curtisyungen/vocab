@@ -19,6 +19,10 @@ html {
   width: 500px;
 }
 
+.playAgainBtn {
+  width: 200px;
+}
+
 .right, 
 .wrong {
   font-size: 13px;
