@@ -9,6 +9,7 @@ class Image extends Component {
         this.state = {
             imageURL: null,
             update: false,
+            showChangeBtn: false,
         }
     }
 
@@ -60,6 +61,18 @@ class Image extends Component {
             });
     }
 
+    showChangeBtn = () => {
+        this.setState({
+            showChangeBtn: true,
+        });
+    }
+
+    hideChangeBtn = () => {
+        this.setState({
+            showChangeBtn: false,
+        });
+    }
+
     render() {
         return (
             <span>
@@ -103,17 +116,24 @@ class Image extends Component {
                                 {/* IMAGE */}
                                 <img
                                     className="image"
+                                    onMouseEnter={this.showChangeBtn}
+                                    onMouseExit={this.hideChangeBtn}
                                     src={`${this.state.imageURL}`}
                                     alt="word"
                                 />
-                                {/* CHANGE BUTTON */}
-                                <button
-                                    className="btn btn-outline-dark btn-sm changeImageBtn"
+                            </div>
+
+                            {/* CHANGE BUTTON */}
+                            {this.state.showChangeBtn ? (
+                                <div 
+                                    className="changeImageBtn"
                                     onClick={this.updateImage}
                                 >
                                     Change
-                                </button>
-                            </div>
+                                </div>
+                            ) : (
+                                <></>
+                            )}
                         </span>
                     )}
             </span>
