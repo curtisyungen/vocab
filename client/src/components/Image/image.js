@@ -82,37 +82,41 @@ class Image extends Component {
                         open={this.state.update}
                         onClose={this.cancelUpdate}
                     >
-                        {/* IMAGE URL INPUT */}
-                        <input
-                            name="imageURL"
-                            type="text"
-                            className="imageInput"
-                            onChange={this.handleInputChange}
-                            defaultValue={this.state.imageURL}
-                            autoComplete="off"
-                        />
+                        <div className="imageModal">
+                            <p>Paste Image URL below.</p>
 
-                        {/* CANCEL */}
-                        <button
-                            className="btn btn-danger btn-sm cancelImageBtn"
-                            onClick={(event) => {
-                                event.preventDefault();
-                                this.cancelUpdate();
-                            }}
-                        >
-                            Cancel
-                        </button>
+                            {/* IMAGE URL INPUT */}
+                            <input
+                                name="imageURL"
+                                type="text"
+                                className="imageInput"
+                                onChange={this.handleInputChange}
+                                defaultValue={this.state.imageURL}
+                                autoComplete="off"
+                            />
 
-                        {/* SAVE */}
-                        <button
-                            className="btn btn-success btn-sm saveImageBtn"
-                            onClick={(event) => {
-                                event.preventDefault();
-                                this.saveImage();
-                            }}
-                        >
-                            Save
-                        </button>
+                            {/* CANCEL */}
+                            <button
+                                className="btn btn-danger btn-sm cancelImageBtn"
+                                onClick={(event) => {
+                                    event.preventDefault();
+                                    this.cancelUpdate();
+                                }}
+                            >
+                                Cancel
+                            </button>
+
+                            {/* SAVE */}
+                            <button
+                                className="btn btn-success btn-sm saveImageBtn"
+                                onClick={(event) => {
+                                    event.preventDefault();
+                                    this.saveImage();
+                                }}
+                            >
+                                Save
+                            </button>
+                        </div>
                     </Modal>
                 ) : (
                     <></>
