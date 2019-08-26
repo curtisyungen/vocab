@@ -39,7 +39,7 @@ class Sentence extends Component {
     }
 
     saveSentence = () => {
-        let word = this.props.word;
+        let word = this.props.word.word;
         let sentence = this.state.sentence;
 
         console.log(word, sentence);
