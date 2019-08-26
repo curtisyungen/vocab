@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import wordsAPI from "../../utils/wordsAPI";
 import Choice from "../Choice/choice";
 import "./word.css";
 
