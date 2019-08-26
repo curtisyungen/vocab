@@ -111,7 +111,7 @@ class App extends Component {
       <div className="home text-center">
 
         {/* IMAGE DISPLAY */}
-        {this.state.words && this.state.words.length > 0 && !this.state.complete ? (
+        {this.state.words && this.state.words.length > 0 ? (
           <Image
             word={this.state.words[this.state.count]}
           />
@@ -140,10 +140,8 @@ class App extends Component {
           )
         )}
 
-
-
         {/* SENTENCE DISPLAY */}
-        {this.state.words && this.state.words.length > 0 && !this.state.complete ? (
+        {this.state.words && this.state.words.length > 0 ? (
           <Sentence 
             word={this.state.words[this.state.count]}
           />
