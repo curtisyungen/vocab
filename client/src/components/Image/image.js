@@ -95,27 +95,29 @@ class Image extends Component {
                                 autoComplete="off"
                             />
 
-                            {/* CANCEL */}
-                            <button
-                                className="btn btn-danger btn-sm cancelImageBtn"
-                                onClick={(event) => {
-                                    event.preventDefault();
-                                    this.cancelUpdate();
-                                }}
-                            >
-                                Cancel
-                            </button>
+                            {/* SAVE & CANCEL BUTTONS */}
+                            <div className="imageModalBtns">
+                                <button
+                                    className="btn btn-success btn-sm saveImageBtn"
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        this.saveImage();
+                                    }}
+                                >
+                                    Save
+                                </button>
+                                
+                                <button
+                                    className="btn btn-danger btn-sm cancelImageBtn"
+                                    onClick={(event) => {
+                                        event.preventDefault();
+                                        this.cancelUpdate();
+                                    }}
+                                >
+                                    Cancel
+                                </button>
 
-                            {/* SAVE */}
-                            <button
-                                className="btn btn-success btn-sm saveImageBtn"
-                                onClick={(event) => {
-                                    event.preventDefault();
-                                    this.saveImage();
-                                }}
-                            >
-                                Save
-                            </button>
+                            </div>
                         </div>
                     </Modal>
                 ) : (
