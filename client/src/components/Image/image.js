@@ -18,6 +18,14 @@ class Image extends Component {
         });
     }
 
+    componentDidUpdate = (prevProps) => {
+        if (prevProps.word.imageURL !== this.props.word.imageURL) {
+            this.setState({
+                imageURL: this.props.word.imageURL,
+            });
+        }
+    }
+
     handleInputChange = (event) => {
         const { name, value } = event.target;
 
@@ -45,6 +53,10 @@ class Image extends Component {
         wordsAPI.updateImage(word, imageURL)
             .then((res) => {
                 console.log(res);
+
+                this.setState({
+                    update: false,
+                });
             });
     }
 
