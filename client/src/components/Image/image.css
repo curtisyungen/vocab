@@ -31,6 +31,7 @@
 }
 
 .imageInput {
+    display: block;
     font-size: 13px;
     width: 350px;
 }
@@ -41,4 +42,5 @@
 
 .imageModalBtns {
     float: right;
+    margin-top: 3px;
 }
