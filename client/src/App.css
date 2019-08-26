@@ -43,7 +43,6 @@ html {
 
 .rightLabel {
   color: darkgreen;
-  font-size: 11px;
 }
 
 .wrong {
@@ -54,6 +53,10 @@ html {
 
 .wrongLabel {
   color: darkred;
+}
+
+.rightLabel, 
+.wrongLabel {
   font-size: 11px;
   margin-bottom: 8px;
 }
