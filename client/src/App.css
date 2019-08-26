@@ -10,6 +10,11 @@ html {
   overflow-x: hidden;
 }
 
+.home {
+  margin: 25px auto;
+  width: 500px;
+}
+
 .right {
   background: lightgreen;
   float: right;
