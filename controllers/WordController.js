@@ -49,6 +49,20 @@ class WordController {
         });
     }
 
+    updateWord(req, res) {
+        db.Words.update(
+            {sentence: req.body.sentence},
+            {where: {
+                word: req.body.word,
+            }})
+            .then((word) => {
+                res.json(word);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
     deleteWord(req, res) {
         db.Words.destroy({
             where: {
