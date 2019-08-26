@@ -49,7 +49,7 @@ class WordController {
         });
     }
 
-    updateWord(req, res) {
+    updateSentence(req, res) {
         db.Words.update(
             {sentence: req.body.sentence},
             {where: {
