@@ -14,6 +14,10 @@ router.post("/addWord", (req, res) => {
     controller.addWord(req, res);
 });
 
+router.put("/updateImage", (req, res) => {
+    controller.updateImage(req, res);
+});
+
 router.put("/updateSentence", (req, res) => {
     controller.updateSentence(req, res);
 });
