@@ -1,6 +1,9 @@
 .changeImageBtn {
-    float: right;
+    background: rgb(61, 61, 61);
+    color: white;
     font-size: 12px;
+    opacity: 0.6;
+    width: 250px;
 }
 
 .image {
