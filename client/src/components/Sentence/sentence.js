@@ -111,7 +111,7 @@ class Sentence extends Component {
 
                             {/* CHANGE */}
                             <button
-                                className="btn btn-dark btn-sm changeSentenceBtn"
+                                className="btn btn-outline-dark btn-sm changeSentenceBtn"
                                 onClick={this.updateSentence}
                             >
                                 Change
