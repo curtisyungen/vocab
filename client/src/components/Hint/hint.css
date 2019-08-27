@@ -1,4 +1,6 @@
 .hint {
+    background: lightgray;
+    border-top: 1px solid darkgray;
     color: black;
     font-size: 12px;
     min-height: 40px;
