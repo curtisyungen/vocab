@@ -236,7 +236,7 @@ class App extends Component {
         )}
 
         {/* GET HINT */}
-        <div>
+        <div className="hintContainer">
           {this.state.showHint ? (
             <Hint
               word={this.state.words[this.state.count]}
