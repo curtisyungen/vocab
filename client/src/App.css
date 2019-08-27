@@ -4,17 +4,15 @@ html {
   overflow-x: hidden;
 }
 
-.appClass {
-  height: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
+.getHintBtn {
+  font-size: 12px;
+  margin: 10px auto;
 }
 
 .home {
   background: rgb(242, 242, 242);
-  /* border: 2px solid darkgray; */
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border: 2px solid rgb(141, 141, 141);
+  border-radius: 4px;
   margin: 25px auto;
   width: 500px;
 }
@@ -54,22 +52,22 @@ html {
   float: left;
 }
 
-.rightLabel {
-  color: darkgreen;
-}
+  .rightLabel {
+    color: darkgreen;
+  }
 
-.wrong {
-  background: rgb(255, 174, 174);
-  border-bottom-right-radius: 4px;
-  float: right;
-}
+  .wrong {
+    background: rgb(255, 174, 174);
+    border-bottom-right-radius: 4px;
+    float: right;
+  }
 
-.wrongLabel {
-  color: darkred;
-}
+  .wrongLabel {
+    color: darkred;
+  }
 
-.rightLabel, 
-.wrongLabel {
-  font-size: 11px;
-  margin-bottom: 8px;
-}
+  .rightLabel, 
+  .wrongLabel {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }

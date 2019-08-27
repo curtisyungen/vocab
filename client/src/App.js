@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Word from "./components/Word/word";
 import Sentence from "./components/Sentence/sentence";
 import Image from "./components/Image/image";
+import Hint from "./components/Hint/hint";
 import wordsAPI from "./utils/wordsAPI";
 import './App.css';
 
@@ -18,6 +19,7 @@ class App extends Component {
       message: null,
       prevCorrect: null,
       complete: false,
+      showHint: false,
     }
   }
 
@@ -31,6 +33,7 @@ class App extends Component {
       right: [],
       wrong: [],
       complete: false,
+      showHint: false,
     }, () => {
       this.getAllWords();
     });
@@ -125,6 +128,13 @@ class App extends Component {
     this.setState({
       count: count,
       complete: complete,
+      showHint: false,
+    });
+  }
+
+  showHint = () => {
+    this.setState({
+      showHint: true,
     });
   }
 
@@ -151,7 +161,6 @@ class App extends Component {
           ) : (
             <></>
           )}
-                
 
           {/* PLAY AGAIN BUTTON */}
           {this.state.complete ? (
@@ -179,15 +188,31 @@ class App extends Component {
 
         {/* SENTENCE DISPLAY */}
         {this.state.words && this.state.words.length > 0 ? (
-          <Sentence 
-            word={this.state.words[this.state.count]}
-          />
+            <Sentence 
+              word={this.state.words[this.state.count]}
+            />
         ) : (
           <></>
         )}
 
+        {/* GET HINT */}
+        <div>
+          {this.state.showHint ? (
+            <Hint
+              word={this.state.words[this.state.count]}
+            />
+          ) : (
+            <button
+              className="btn btn-outline-dark btn-sm getHintBtn"
+              onClick={this.showHint}
+            >
+              Get Hint
+            </button>
+          )}
+        </div>
+
         {/* RIGHT ANSWERS */}
-        <div className="right">
+        {/* <div className="right">
           <div className="rightLabel">Right</div>
           {this.state.right && this.state.right.length > 0 ? (
             this.state.right.map(right => (
@@ -198,10 +223,10 @@ class App extends Component {
           ) : (
             <></>
           )}
-        </div>
+        </div> */}
 
         {/* WRONG ANSWERS */}
-        <div className="wrong">
+        {/* <div className="wrong">
           <div className="wrongLabel">Wrong</div>
           {this.state.wrong && this.state.wrong.length > 0 ? (
             this.state.wrong.map(wrong => (
@@ -212,7 +237,7 @@ class App extends Component {
           ) : (
             <></>
           )}
-        </div>
+        </div> */}
       </div>
     )
   }
