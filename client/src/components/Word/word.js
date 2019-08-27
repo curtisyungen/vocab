@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import Choice from "../Choice/choice";
 import "./word.css";
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faVolumeUp);
+
 class Word extends Component {
     constructor(props) {
         super(props);
@@ -81,6 +87,10 @@ class Word extends Component {
         this.props.getRightChoice(word, rightChoice, choice);
     }
 
+    speak = () => {
+        this.props.speak(this.props.word.word);
+    }
+
     render() {
         return (
             <div className="wordContainer">
@@ -89,6 +99,12 @@ class Word extends Component {
                 <div className="word">
                     {this.props.word.word}
                 </div>
+
+                <FontAwesomeIcon 
+                    className="fa-1x speakIcon" 
+                    icon={faVolumeUp} 
+                    onClick={this.speak}
+                />
 
                 {/* CHOICES */}
                 {this.state.choices && this.state.choices.length > 0 ? (
