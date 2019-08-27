@@ -185,7 +185,10 @@ class App extends Component {
     return (
       <span>
       
-      <h4 className="mainTitle">GRE Argot Tester (G.R.E.A.T.)</h4>
+      <h4 className="mainTitle">
+        <img className="logo" src={require(`./images/logo.png`)} alt="GREAT Logo" />
+        GRE Argot Tester
+      </h4>
       
       <div className="home text-center">
   
