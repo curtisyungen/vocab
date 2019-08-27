@@ -5,7 +5,8 @@ html {
 }
 
 .curtis-btn {
-  margin-top: 8px;
+  display: block;
+  margin: 8px auto;
   width: 200px; 
 }
 
