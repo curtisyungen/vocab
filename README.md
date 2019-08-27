@@ -2,7 +2,7 @@
   <img src="./client/src/images/logo.png" alt="logo" />
 </p>
 
-# GRE Argot Tester (G.R.E.A.T.)
+# GRE Argot Tester
 **by Curtis Yungen**
 
 August 2019
