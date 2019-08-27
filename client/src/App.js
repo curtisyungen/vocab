@@ -31,6 +31,7 @@ class App extends Component {
     this.getVoice();
   }
 
+  // Sets up a new game
   newGame = () => {
     this.setState({
       count: 0,
@@ -136,6 +137,7 @@ class App extends Component {
     });
   }
 
+  // Displays hint (word type and definition)
   showHint = () => {
     this.setState({
       showHint: true,
