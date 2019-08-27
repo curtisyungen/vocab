@@ -36,6 +36,11 @@ html {
   width: 500px;
 }
 
+.logo {
+  display: inline-block;
+  height: 25px; 
+}
+
 .mainSection {
   min-height: 170px;
 }
