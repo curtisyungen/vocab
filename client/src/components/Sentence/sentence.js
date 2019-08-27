@@ -13,17 +13,24 @@ class Sentence extends Component {
     }
 
     componentDidMount = () => {
-        this.setState({
-            sentence: this.props.word.sentence,
-        });
+        this.getSentence();
     }
 
     componentDidUpdate = (prevProps) => {
         if (prevProps.word.sentence !== this.props.word.sentence) {
-            this.setState({
-                sentence: this.props.word.sentence,
-            });
+            this.getSentence();
         }
+    }
+
+    getSentence = () => {
+        let sentence = "Click 'Change' to enter in a sentence for this word.";
+        if (this.props.word.sentence && this.props.word.sentence.length > 0) {
+            sentence = this.props.word.sentence;
+        }
+
+        this.setState({
+            sentence: sentence,
+        });
     }
 
     handleInputChange = (event) => {
