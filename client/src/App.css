@@ -20,12 +20,25 @@ html {
 }
 
 .mainSection {
-  min-height: 200px;
+  min-height: 192px;
+}
+
+.message {
+  font-size: 15px;
+  padding: 10px;
 }
 
 .playAgainBtn {
   margin-top: 100px;
   width: 200px;
+}
+
+.prevCorrect-true {
+  background: rgb(85, 214, 85);
+}
+
+.prevCorrect-false {
+  background: rgb(247, 53, 53);
 }
 
 .right, 
