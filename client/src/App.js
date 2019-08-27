@@ -184,8 +184,11 @@ class App extends Component {
   render() {
     return (
       <span>
+      
+      <h4 className="mainTitle">GRE Argot Tester (G.R.E.A.T.)</h4>
+      
       <div className="home text-center">
-
+  
         {/* IMAGE DISPLAY */}
         {this.state.words && this.state.words.length > 0 ? (
           <Image
