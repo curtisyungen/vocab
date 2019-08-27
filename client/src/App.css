@@ -5,12 +5,13 @@ html {
 }
 
 .curtis-btn {
+  margin-top: 8px;
   width: 200px; 
 }
 
 .curtis-text {
-  color: white;
-  font-size: 16px;
+  color: #000;
+  font-size: 12px;
 }
 
 .getHintBtn {
