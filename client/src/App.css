@@ -88,6 +88,10 @@ html {
   .imageInput {
     width: 300px;
   }
+
+  .speakIcon {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 375px) {
