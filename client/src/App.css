@@ -38,7 +38,8 @@ html {
 
 .logo {
   display: inline-block;
-  height: 25px; 
+  height: 35px; 
+  margin-right: 10px;
 }
 
 .mainSection {
