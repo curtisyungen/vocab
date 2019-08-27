@@ -251,6 +251,22 @@ class App extends Component {
           )}
         </div>
 
+        {/* CURTIS PORTFOLIO LINK */}
+        <div className="curtis text-center">
+            <p className={`curtis-text`}>
+                This project was created by Curtis Yungen.
+                Check out his Web Development Portfolio here: 
+                <a 
+                    className={`btn btn-warning btn-sm curtis-btn`}
+                    href="https://curtisyungen.github.io/Portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Hire Curtis!
+                </a>
+            </p>
+        </div>
+
         {/* RIGHT ANSWERS */}
         {/* <div className="right">
           <div className="rightLabel">Right</div>
