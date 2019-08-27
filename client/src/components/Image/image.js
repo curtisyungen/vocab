@@ -19,7 +19,7 @@ class Image extends Component {
     }
 
     componentDidUpdate = (prevProps) => {
-        if (prevProps.word.imageURL !== this.props.word.imageURL) {
+        if (prevProps.word !== this.props.word) {
             this.getImageURL();
         }
     }
