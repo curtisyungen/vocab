@@ -10,6 +10,7 @@ html {
 }
 
 .curtis-text {
+  border-top: 1px solid darkgray;
   color: #000;
   font-size: 12px;
 }
