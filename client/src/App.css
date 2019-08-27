@@ -4,6 +4,15 @@ html {
   overflow-x: hidden;
 }
 
+.curtis-btn {
+  width: 200px; 
+}
+
+.curtis-text {
+  color: white;
+  font-size: 16px;
+}
+
 .getHintBtn {
   font-size: 12px;
   margin: 10px auto;
