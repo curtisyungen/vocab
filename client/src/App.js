@@ -15,6 +15,8 @@ class App extends Component {
       count: null,
       right: [],
       wrong: [],
+      message: null,
+      prevCorrect: null,
       complete: false,
     }
   }
@@ -58,6 +60,26 @@ class App extends Component {
       count: 0,
       words: words,
       complete: false,
+    });
+  }
+
+  // Computes message to tell user correct answer
+  getRightChoice = (word, rightChoice, choice) => {
+    let message = "";
+    let prevCorrect = false;
+
+    if (rightChoice === choice) {
+      message = `Correct! ${word} = ${choice.toLowerCase()}.`
+      prevCorrect = true;
+    }
+    else {
+      message = `Incorrect! ${word} = ${rightChoice.toLowerCase()}`
+      prevCorrect = false;
+    }
+
+    this.setState({
+      message: message,
+      prevCorrect: prevCorrect,
     });
   }
 
@@ -121,6 +143,16 @@ class App extends Component {
 
         <div className="mainSection">
 
+          {/* ANSWER */}
+          {this.state.count > 0 ? (
+            <div className={`message prevCorrect-${this.state.prevCorrect}`}>
+              {this.state.message}
+            </div>
+          ) : (
+            <></>
+          )}
+                
+
           {/* PLAY AGAIN BUTTON */}
           {this.state.complete ? (
             <button
@@ -136,6 +168,7 @@ class App extends Component {
                 word={this.state.words[this.state.count]}
                 addRight={this.addRight}
                 addWrong={this.addWrong}
+                getRightChoice={this.getRightChoice}
               />
             ) : (
               <p className="text-center">Loading...</p>
