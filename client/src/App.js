@@ -18,7 +18,7 @@ class App extends Component {
       count: null,
       right: [],
       wrong: [],
-      message: null,
+      message: "Which is the closest synonym to the bolded word below?",
       prevCorrect: null,
       complete: false,
       showHint: false,
@@ -197,13 +197,9 @@ class App extends Component {
         <div className="mainSection">
 
           {/* ANSWER */}
-          {this.state.count > 0 ? (
-            <div className={`message prevCorrect-${this.state.prevCorrect}`}>
-              {this.state.message}
-            </div>
-          ) : (
-            <></>
-          )}
+          <div className={`message prevCorrect-${this.state.prevCorrect}`}>
+            {this.state.message}
+          </div>
 
           {/* PLAY AGAIN BUTTON */}
           {this.state.complete ? (
