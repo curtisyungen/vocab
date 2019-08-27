@@ -52,22 +52,49 @@ html {
   float: left;
 }
 
-  .rightLabel {
-    color: darkgreen;
+.rightLabel {
+  color: darkgreen;
+}
+
+.wrong {
+  background: rgb(255, 174, 174);
+  border-bottom-right-radius: 4px;
+  float: right;
+}
+
+.wrongLabel {
+  color: darkred;
+}
+
+.rightLabel, 
+.wrongLabel {
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 520px) {
+  .changeSentenceBtn {
+    display: block;
+    float: none;
+    margin: 10px auto;
+    margin-bottom: 0px;
   }
 
-  .wrong {
-    background: rgb(255, 174, 174);
-    border-bottom-right-radius: 4px;
-    float: right;
+  .home {
+    width: 350px;
   }
 
-  .wrongLabel {
-    color: darkred;
+  .imageInput {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .home {
+    width: 300px;
   }
 
-  .rightLabel, 
-  .wrongLabel {
-    font-size: 11px;
-    margin-bottom: 8px;
+  .imageInput {
+    width: 200px;
   }
+}
