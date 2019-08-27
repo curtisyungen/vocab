@@ -64,7 +64,7 @@ html {
 }
 
 .prevCorrect-true {
-  background: rgb(85, 214, 85);
+  background: palegreen;
   border-bottom: 1px solid darkgreen;
   border-top: 1px solid darkgreen;
 }
