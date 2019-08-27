@@ -10,6 +10,10 @@ html {
   width: 75px;
 }
 
+.hintContainer {
+  background: #d3d3d3; 
+}
+
 .home {
   background: rgb(242, 242, 242);
   border: 2px solid rgb(141, 141, 141);
