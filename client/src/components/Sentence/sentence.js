@@ -17,7 +17,7 @@ class Sentence extends Component {
     }
 
     componentDidUpdate = (prevProps) => {
-        if (prevProps.word.sentence !== this.props.word.sentence) {
+        if (prevProps.word !== this.props.word) {
             this.getSentence();
         }
     }
@@ -70,9 +70,13 @@ class Sentence extends Component {
     render() {
         return (
             <div className="sentenceContainer">
+
+                {/* <p className="sentenceLabel">Sentence</p> */}
+                    
                 {/* UPDATE SENTENCE */}
                 {this.state.update ? (
                     <span>
+                        
                         <form>
                             {/* INPUT */}
                             <div className="form-group">
@@ -88,7 +92,7 @@ class Sentence extends Component {
                             <div className="form-group">
                                 {/* SAVE */}
                                 <button
-                                    className="btn btn-success btn-sm saveSentenceBtn"
+                                    className="btn btn-outline-success btn-sm saveSentenceBtn"
                                     onClick={(event) => {
                                         event.preventDefault();
                                         this.saveSentence();
@@ -99,7 +103,7 @@ class Sentence extends Component {
 
                                 {/* CANCEL */}
                                 <button
-                                    className="btn btn-danger btn-sm cancelSentenceBtn"
+                                    className="btn btn-outline-danger btn-sm cancelSentenceBtn"
                                     onClick={(event) => {
                                         event.preventDefault();
                                         this.cancelUpdate();
