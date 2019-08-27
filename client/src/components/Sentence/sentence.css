@@ -5,8 +5,9 @@
 }
 
 .changeSentenceBtn {
-    float: right;
+    display: block;
     font-size: 12px;
+    margin: 5px auto 0px auto;
 }
 
 .saveSentenceBtn {
