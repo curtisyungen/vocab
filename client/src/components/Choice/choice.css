@@ -1,7 +1,7 @@
 .choice {
     cursor: pointer;
     margin: 5px auto 0px auto;
-    width: 300px;
+    width: auto;
 }
 
 .choice:hover {
