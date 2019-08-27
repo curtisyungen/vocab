@@ -51,7 +51,7 @@ html {
 }
 
 .message {
-  background: rgb(51, 51, 51);
+  background: #c4c4c4;
   border-bottom: 1px solid darkgray;
   border-top: 1px solid darkgray;
   font-size: 15px;
