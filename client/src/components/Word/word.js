@@ -77,6 +77,8 @@ class Word extends Component {
         else {
             this.props.addWrong(word);
         }
+
+        this.props.getRightChoice(word, rightChoice, choice);
     }
 
     render() {
