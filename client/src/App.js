@@ -6,6 +6,8 @@ import Hint from "./components/Hint/hint";
 import wordsAPI from "./utils/wordsAPI";
 import './App.css';
 
+const synth = window.speechSynthesis;
+
 class App extends Component {
 
   constructor(props) {
@@ -20,11 +22,13 @@ class App extends Component {
       prevCorrect: null,
       complete: false,
       showHint: false,
+      voice: null,
     }
   }
 
   componentDidMount = () => {
     this.newGame();
+    this.getVoice();
   }
 
   newGame = () => {
@@ -138,6 +142,43 @@ class App extends Component {
     });
   }
 
+  // Gets list of voices from Speech Synthesis API
+  getVoice = () => {
+    if (synth.onvoiceschanged !== undefined) {
+      synth.onvoiceschanged = this.setVoice;
+    }
+  }
+
+  // Sets default voice in state
+  setVoice = () => {
+    let voices = synth.getVoices();
+    
+    this.setState({
+      voice: voices[0],
+    });
+  }
+
+  // Reads text using Speech Synthesis API
+  speak = (text) => {
+    if (synth.speaking) {
+      return;
+    }
+
+    let speakText;
+    if (text && text.length > 0) {
+        speakText = new SpeechSynthesisUtterance(text);
+    }
+
+    speakText.onerror = (event) => {
+        console.error("Something went wrong.");
+    }
+
+    speakText.rate = 0.60;
+    speakText.voice = this.state.voice;
+
+    synth.speak(speakText);
+  }
+
   render() {
     return (
       <div className="home text-center">
@@ -178,6 +219,7 @@ class App extends Component {
                 addRight={this.addRight}
                 addWrong={this.addWrong}
                 getRightChoice={this.getRightChoice}
+                speak={this.speak}
               />
             ) : (
               <p className="text-center">Loading...</p>
