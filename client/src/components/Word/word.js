@@ -30,6 +30,8 @@ class Word extends Component {
 
     // Randomly chooses a synonym and sets as correct answer
     getChoices = () => {
+        
+        console.log(this.props.word);
 
         let choices = [];
         
