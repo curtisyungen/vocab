@@ -1,3 +1,12 @@
+.counter {
+    bottom: 0;
+    color: black;
+    font-size: 13px;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+}
+
 .speakIcon {
     cursor: pointer;
     height: 20px;

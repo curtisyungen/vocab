@@ -99,6 +99,11 @@ class Word extends Component {
         return (
             <div className="wordContainer">
 
+                {/* COUNTER */}
+                <div className="counter">
+                    <div>{this.props.right} / {this.props.numWords} right</div>
+                </div>
+
                 {/* WORD */}
                 <div className="word">
                     {this.props.word.word}
