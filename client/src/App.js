@@ -188,14 +188,6 @@ class App extends Component {
       <h4 className="mainTitle">
         <img className="logo" src={require(`./images/logo.png`)} alt="GREAT Logo" />
         <span>GRE Argot Tester</span>
-        {this.state.words ? (
-          <div className="counter">
-            <div>{this.state.right} / {this.state.words.length} right</div>
-            {/* <div>{this.state.right} right</div> */}
-          </div>
-        ) : (
-          <></>
-        )}
       </h4>
       
       <div className="home text-center">
@@ -237,6 +229,16 @@ class App extends Component {
             ) : (
               <p className="text-center">Loading...</p>
             )
+          )}
+
+          {/* COUNTER */}
+          {this.state.words ? (
+            <div className="counter">
+              <div>{this.state.right} / {this.state.words.length} right</div>
+              {/* <div>{this.state.right} right</div> */}
+            </div>
+          ) : (
+            <></>
           )}
           
         </div>
