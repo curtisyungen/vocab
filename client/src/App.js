@@ -57,7 +57,7 @@ class App extends Component {
   shuffleWords = (words) => {
     let rand;
     let temp;
-    for (var i=words.length - 1; i>0; i--) {
+    for (var i = words.length - 1; i > 0; i--) {
       rand = Math.floor(Math.random() * (i + 1));
       temp = words[i];
       words[i] = words[rand];
@@ -154,7 +154,7 @@ class App extends Component {
   // Sets default voice in state
   setVoice = () => {
     let voices = synth.getVoices();
-    
+
     this.setState({
       voice: voices[0],
     });
@@ -168,11 +168,11 @@ class App extends Component {
 
     let speakText;
     if (text && text.length > 0) {
-        speakText = new SpeechSynthesisUtterance(text);
+      speakText = new SpeechSynthesisUtterance(text);
     }
 
     speakText.onerror = (event) => {
-        console.error("Something went wrong.");
+      console.error("Something went wrong.");
     }
 
     speakText.rate = 0.60;
@@ -184,98 +184,98 @@ class App extends Component {
   render() {
     return (
       <span>
-      
-      <h4 className="mainTitle">
-        <img className="logo" src={require(`./images/logo.png`)} alt="GREAT Logo" />
-        <span>GRE Argot Tester</span>
-      </h4>
-      
-      <div className="home text-center">
-  
-        {/* IMAGE DISPLAY */}
-        {this.state.words && this.state.words.length > 0 ? (
-          <Image
-            word={this.state.words[this.state.count]}
-          />
-        ) : (
-          <></>
-        )}
 
-        <div className="mainSection">
+        <h4 className="mainTitle">
+          <img className="logo" src={require(`./images/logo.png`)} alt="GREAT Logo" />
+          <span>GRE Argot Tester</span>
+        </h4>
 
-          {/* ANSWER */}
-          <div className={`message prevCorrect-${this.state.prevCorrect}`}>
-            {this.state.message}
+        <div className="home text-center">
+
+          {/* IMAGE DISPLAY */}
+          {this.state.words && this.state.words.length > 0 ? (
+            <Image
+              word={this.state.words[this.state.count]}
+            />
+          ) : (
+              <></>
+            )}
+
+          <div className="mainSection">
+
+            {/* ANSWER */}
+            <div className={`message prevCorrect-${this.state.prevCorrect}`}>
+              {this.state.message}
+            </div>
+
+            {/* PLAY AGAIN BUTTON */}
+            {this.state.complete ? (
+              <button
+                className="btn btn-warning playAgainBtn"
+                onClick={this.newGame}
+              >
+                Replay
+            </button>
+            ) : (
+                // WORD DISPLAY
+                this.state.words && this.state.words.length > 0 ? (
+                  <Word
+                    right={this.state.right}
+                    numWords={this.state.words.length}
+                    word={this.state.words[this.state.count]}
+                    addRight={this.addRight}
+                    addWrong={this.addWrong}
+                    getRightChoice={this.getRightChoice}
+                    speak={this.speak}
+                  />
+                ) : (
+                    <p className="text-center">Loading...</p>
+                  )
+              )}
           </div>
 
-          {/* PLAY AGAIN BUTTON */}
-          {this.state.complete ? (
-            <button
-              className="btn btn-warning playAgainBtn"
-              onClick={this.newGame}
-            >
-              Replay
-            </button>
+          {/* SENTENCE DISPLAY */}
+          {this.state.words && this.state.words.length > 0 ? (
+            <Sentence
+              word={this.state.words[this.state.count]}
+            />
           ) : (
-            // WORD DISPLAY
-            this.state.words && this.state.words.length > 0 ? (
-              <Word 
-                right={this.state.right}
-                numWords={this.state.words.length}
+              <></>
+            )}
+
+          {/* GET HINT */}
+          <div className="hintContainer">
+            {this.state.showHint ? (
+              <Hint
                 word={this.state.words[this.state.count]}
-                addRight={this.addRight}
-                addWrong={this.addWrong}
-                getRightChoice={this.getRightChoice}
-                speak={this.speak}
               />
             ) : (
-              <p className="text-center">Loading...</p>
-            )
-          )}          
-        </div>
-
-        {/* SENTENCE DISPLAY */}
-        {this.state.words && this.state.words.length > 0 ? (
-            <Sentence 
-              word={this.state.words[this.state.count]}
-            />
-        ) : (
-          <></>
-        )}
-
-        {/* GET HINT */}
-        <div className="hintContainer">
-          {this.state.showHint ? (
-            <Hint
-              word={this.state.words[this.state.count]}
-            />
-          ) : (
-            <button
-              className="btn btn-outline-dark btn-sm getHintBtn"
-              onClick={this.showHint}
-            >
-              Get Hint
+                <button
+                  className="btn btn-outline-dark btn-sm getHintBtn"
+                  onClick={this.showHint}
+                >
+                  Get Hint
             </button>
-          )}
-        </div>
-      </div>
+              )}
+          </div>
 
-      {/* CURTIS PORTFOLIO LINK */}
-      <div className="curtis text-center">
-          <p className={`curtis-text`}>
+          {/* CURTIS PORTFOLIO LINK */}
+          <div className="curtis text-center">
+            <p className={`curtis-text`}>
               This project was created by Curtis Yungen.
-              Check out his Web Development Portfolio here: 
-              <a 
-                  className={`btn btn-warning btn-sm curtis-btn`}
-                  href="https://curtisyungen.github.io/Portfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              Check out his Web Development Portfolio here:
+              <a
+                className={`btn btn-warning btn-sm curtis-btn`}
+                href="https://curtisyungen.github.io/Portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                  Hire Curtis!
+                Hire Curtis!
               </a>
-          </p>
-      </div>
-    </span>
+            </p>
+          </div>
+        </div>
+      </span>
     )
   }
 }

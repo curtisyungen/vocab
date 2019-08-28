@@ -31,6 +31,7 @@ html {
 .home {
   background: rgb(242, 242, 242);
   border: 2px solid rgb(141, 141, 141);
+  border-bottom: 0px;
   border-top: 0px;
   margin: 0px auto;
   width: 500px;
