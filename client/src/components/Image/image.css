@@ -16,7 +16,7 @@
     opacity: 0.86;
     padding: 5px;
     position: absolute;
-    top: 100px;
+    top: 5px;
     transform: translate(-50%);
     width: 75px;
 }
@@ -31,6 +31,10 @@
     height: 300px;
     margin: 0px auto;
     width: 100%;
+}
+
+.imageContainer {
+    position: relative;
 }
 
 .imageInput {
