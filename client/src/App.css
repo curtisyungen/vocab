@@ -32,7 +32,7 @@ html {
   background: rgb(242, 242, 242);
   border: 2px solid rgb(141, 141, 141);
   border-radius: 4px;
-  margin: 5px auto 45px;
+  margin: 20px auto 45px;
   width: 500px;
 }
 
@@ -47,7 +47,9 @@ html {
 }
 
 .mainTitle {
-  margin-top: 30px; 
+  left: 5px;
+  position: absolute;
+  top: 5px;
 }
 
 .message {
@@ -73,6 +75,12 @@ html {
   background: rgb(247, 53, 53);
   border-bottom: 1px solid darkred;
   border-top: 1px solid darkred;
+}
+
+@media only screen and (max-width: 1024px) {
+  .home {
+    margin-top: 50px;
+  }
 }
 
 @media only screen and (max-width: 520px) {
