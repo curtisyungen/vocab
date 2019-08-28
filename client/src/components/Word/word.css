@@ -2,8 +2,8 @@
     cursor: pointer;
     height: 20px;
     position: absolute;
-    right: 18px;
-    top: 450px;
+    right: 10px;
+    top: 10px;
 }
 
 .word {
@@ -15,5 +15,6 @@
 .wordContainer {
     background: lightgray;
     padding: 15px;
+    position: relative;
     width: 100%;
 }
