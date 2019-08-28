@@ -7,7 +7,8 @@ html {
 .counter {
   color: black;
   float: right;
-  font-size: 12px;
+  font-size: 13px;
+  margin-top: 10px;
 }
 
 .curtis-btn {
@@ -79,39 +80,6 @@ html {
   background: rgb(247, 53, 53);
   border-bottom: 1px solid darkred;
   border-top: 1px solid darkred;
-}
-
-.right, 
-.wrong {
-  font-size: 13px;
-  padding: 10px;
-  width: 250px;
-}
-
-.right {
-  background: lightgreen;
-  border-bottom-left-radius: 4px;
-  float: left;
-}
-
-.rightLabel {
-  color: darkgreen;
-}
-
-.wrong {
-  background: rgb(255, 174, 174);
-  border-bottom-right-radius: 4px;
-  float: right;
-}
-
-.wrongLabel {
-  color: darkred;
-}
-
-.rightLabel, 
-.wrongLabel {
-  font-size: 11px;
-  margin-bottom: 8px;
 }
 
 @media only screen and (max-width: 520px) {
