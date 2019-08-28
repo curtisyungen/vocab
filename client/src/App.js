@@ -190,8 +190,8 @@ class App extends Component {
         <span>GRE Argot Tester</span>
         {this.state.words ? (
           <div className="counter">
-            <div>{this.state.count}/{this.state.words.length}</div>
-            <div>{this.state.right} right</div>
+            <div>{this.state.right}/{this.state.words.length} right</div>
+            {/* <div>{this.state.right} right</div> */}
           </div>
         ) : (
           <></>
