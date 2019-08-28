@@ -16,8 +16,8 @@ class App extends Component {
     this.state = {
       words: null,
       count: null,
-      right: [],
-      wrong: [],
+      right: null,
+      wrong: null,
       message: "Which is the closest synonym to the bolded word below?",
       prevCorrect: null,
       complete: false,
@@ -35,8 +35,8 @@ class App extends Component {
   newGame = () => {
     this.setState({
       count: 0,
-      right: [],
-      wrong: [],
+      right: 0,
+      wrong: 0,
       complete: false,
       showHint: false,
     }, () => {
@@ -91,10 +91,10 @@ class App extends Component {
     });
   }
 
-  // Adds word to array of correct answers
-  addRight = (word) => {
+  // Adds one to total of right answers
+  addRight = () => {
     let right = this.state.right;
-    right.push(word);
+    right += 1;
 
     this.setState({
       right: right,
@@ -103,10 +103,10 @@ class App extends Component {
     });
   }
 
-  // Adds word to array of wrong answers
-  addWrong = (word) => {
+  // Adds one to total of wrong answers
+  addWrong = () => {
     let wrong = this.state.wrong;
-    wrong.push(word);
+    wrong += 1;
 
     this.setState({
       wrong: wrong,
@@ -187,7 +187,12 @@ class App extends Component {
       
       <h4 className="mainTitle">
         <img className="logo" src={require(`./images/logo.png`)} alt="GREAT Logo" />
-        GRE Argot Tester
+        <span>GRE Argot Tester</span>
+        {this.state.words ? (
+          <span className="counter">{this.state.count}/{this.state.words.length}</span>
+        ) : (
+          <></>
+        )}
       </h4>
       
       <div className="home text-center">
@@ -257,34 +262,6 @@ class App extends Component {
             </button>
           )}
         </div>
-
-        {/* RIGHT ANSWERS */}
-        {/* <div className="right">
-          <div className="rightLabel">Right</div>
-          {this.state.right && this.state.right.length > 0 ? (
-            this.state.right.map(right => (
-              <div key={right}>
-                {right}
-              </div>
-            ))
-          ) : (
-            <></>
-          )}
-        </div> */}
-
-        {/* WRONG ANSWERS */}
-        {/* <div className="wrong">
-          <div className="wrongLabel">Wrong</div>
-          {this.state.wrong && this.state.wrong.length > 0 ? (
-            this.state.wrong.map(wrong => (
-              <div key={wrong}>
-                {wrong}
-              </div>
-            ))
-          ) : (
-            <></>
-          )}
-        </div> */}
       </div>
 
       {/* CURTIS PORTFOLIO LINK */}
