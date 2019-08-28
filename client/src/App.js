@@ -189,7 +189,10 @@ class App extends Component {
         <img className="logo" src={require(`./images/logo.png`)} alt="GREAT Logo" />
         <span>GRE Argot Tester</span>
         {this.state.words ? (
-          <span className="counter">{this.state.count}/{this.state.words.length}</span>
+          <div className="counter">
+            <div>{this.state.count}/{this.state.words.length}</div>
+            <div>{this.state.right} right</div>
+          </div>
         ) : (
           <></>
         )}
