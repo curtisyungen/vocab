@@ -184,13 +184,13 @@ class App extends Component {
   render() {
     return (
       <span>
-
-        <h4 className="mainTitle">
-          <img className="logo" src={require(`./images/logo.png`)} alt="GREAT Logo" />
-          <span>GRE Argot Tester</span>
-        </h4>
-
         <div className="home text-center">
+
+          {/* TITLE */}
+          <h4 className="mainTitle">
+            <img className="logo" src={require(`./images/logo.png`)} alt="GREAT Logo" />
+            <span>GRE Argot Tester</span>
+          </h4>
 
           {/* IMAGE DISPLAY */}
           {this.state.words && this.state.words.length > 0 ? (
