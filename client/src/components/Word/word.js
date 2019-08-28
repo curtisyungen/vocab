@@ -58,6 +58,7 @@ class Word extends Component {
         this.shuffleChoices(choices);
     }
 
+    // Shuffles choices into a random order
     shuffleChoices = (choices) => {
         let rand;
         let temp;
@@ -80,15 +81,16 @@ class Word extends Component {
         let rightChoice = this.state.rightChoice;
 
         if (rightChoice === choice) {
-            this.props.addRight(word);
+            this.props.addRight();
         }
         else {
-            this.props.addWrong(word);
+            this.props.addWrong();
         }
 
         this.props.getRightChoice(word, rightChoice, choice);
     }
 
+    // Reads the word aloud using the Speech Synthesizer
     speak = () => {
         this.props.speak(this.props.word.word);
     }
