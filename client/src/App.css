@@ -4,6 +4,12 @@ html {
   overflow-x: hidden;
 }
 
+.counter {
+  color: black;
+  float: right;
+  font-size: 12px;
+}
+
 .curtis-btn {
   display: block;
   margin: 8px auto;
