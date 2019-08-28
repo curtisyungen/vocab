@@ -4,6 +4,10 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  background-size: 100%;
+}
+
 .curtis-btn {
   display: block;
   margin: 8px auto;
@@ -50,7 +54,7 @@ html {
 }
 
 .mainTitle {
-  background: #9ab2b2;
+  background: darkgray;
   border-bottom: 1px solid darkgray;
   line-height: 1.0;
   margin-bottom: 0px;
