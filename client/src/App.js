@@ -29,6 +29,25 @@ class App extends Component {
   componentDidMount = () => {
     this.newGame();
     this.getVoice();
+    this.getBackground();
+  }
+
+  // Sets background of body
+  // Images taken from Pexels.com -- all free stock photos
+  getBackground = () => {
+    let links = [
+      "https://images.pexels.com/photos/403575/pexels-photo-403575.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/1420701/pexels-photo-1420701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/1420702/pexels-photo-1420702.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/1031641/pexels-photo-1031641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    ];
+
+    let idx = Math.floor(Math.random() * links.length);
+
+    let background = links[idx];
+
+    document.body.style = `background-image: url(${background})`;
   }
 
   // Sets up a new game

@@ -4,6 +4,10 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  background-size: 100%;
+}
+
 .curtis-btn {
   display: block;
   margin: 8px auto;
