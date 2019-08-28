@@ -220,6 +220,8 @@ class App extends Component {
             // WORD DISPLAY
             this.state.words && this.state.words.length > 0 ? (
               <Word 
+                right={this.state.right}
+                numWords={this.state.words.length}
                 word={this.state.words[this.state.count]}
                 addRight={this.addRight}
                 addWrong={this.addWrong}
@@ -229,18 +231,7 @@ class App extends Component {
             ) : (
               <p className="text-center">Loading...</p>
             )
-          )}
-
-          {/* COUNTER */}
-          {this.state.words ? (
-            <div className="counter">
-              <div>{this.state.right} / {this.state.words.length} right</div>
-              {/* <div>{this.state.right} right</div> */}
-            </div>
-          ) : (
-            <></>
-          )}
-          
+          )}          
         </div>
 
         {/* SENTENCE DISPLAY */}
