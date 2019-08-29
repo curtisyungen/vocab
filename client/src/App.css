@@ -33,10 +33,8 @@ body {
 .home {
   background: rgb(242, 242, 242);
   border: 4px double;
-/*   border-bottom: 0px; */
-  border-top: 0px;
   height: 100%;
-  margin: 0px auto;
+  margin: 35px auto;
   width: 500px;
 }
 
