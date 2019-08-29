@@ -2,6 +2,8 @@
     background: lightgray;
     color: black;
     font-size: 12px;
+    margin-top: 10px;
     min-height: 40px;
+    min-width: 300px;
     padding: 10px;
 }

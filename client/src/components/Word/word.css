@@ -1,3 +1,11 @@
+.bookIcon {
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+}
+
 .counter {
     bottom: 0;
     color: black;

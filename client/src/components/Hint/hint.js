@@ -28,9 +28,12 @@ class Hint extends Component {
 
     render() {
         return (
-            <div className="hint">
-                [{this.state.type}]&nbsp;{this.state.hint}
-            </div>
+            <span>
+                <h4>Definition</h4>
+                <div className="hint">
+                    [{this.state.type}]&nbsp;{this.state.hint}
+                </div>
+            </span>
         )
     }
 }
