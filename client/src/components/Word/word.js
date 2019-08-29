@@ -4,9 +4,9 @@ import "./word.css";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+import { faVolumeUp, faBook } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faVolumeUp);
+library.add(faVolumeUp, faBook);
 
 class Word extends Component {
     constructor(props) {
@@ -109,10 +109,18 @@ class Word extends Component {
                     {this.props.word.word}
                 </div>
 
+                {/* SPEAK ICON */}
                 <FontAwesomeIcon 
                     className="fa-1x speakIcon" 
                     icon={faVolumeUp} 
                     onClick={this.speak}
+                />
+
+                {/* HINT ICON */}
+                <FontAwesomeIcon
+                    className="fa-1x bookIcon"
+                    icon={faBook}
+                    onClick={this.props.showHint}
                 />
 
                 {/* CHOICES */}

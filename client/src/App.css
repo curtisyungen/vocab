@@ -15,6 +15,7 @@ body {
 }
 
 .curtis-text {
+  background: darkgray;
   border-top: 1px solid darkgray;
   color: #000;
   font-size: 12px;
@@ -30,7 +31,7 @@ body {
 }
 
 .hintContainer {
-  background: #d3d3d3; 
+  /* background: #d3d3d3;  */
 }
 
 .home {
