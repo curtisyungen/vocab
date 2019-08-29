@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from "react-responsive-modal";
 import Word from "./components/Word/word";
 import Sentence from "./components/Sentence/sentence";
 import Image from "./components/Image/image";
@@ -69,7 +70,13 @@ class App extends Component {
     wordsAPI.getAllWords()
       .then((res) => {
         let words = res.data;
-        this.shuffleWords(words);
+        // this.shuffleWords(words);
+
+        this.setState({
+          count: 0,
+          words: words,
+          complete: false,
+        });
       });
   }
 
@@ -157,10 +164,17 @@ class App extends Component {
     });
   }
 
-  // Displays hint (word type and definition)
+  // Displays hint modal (word type and definition)
   showHint = () => {
     this.setState({
       showHint: true,
+    });
+  }
+
+  // Closes hint modal
+  hideHint = () => {
+    this.setState({ 
+      showHint: false,
     });
   }
 
@@ -247,6 +261,7 @@ class App extends Component {
                     addWrong={this.addWrong}
                     getRightChoice={this.getRightChoice}
                     speak={this.speak}
+                    showHint={this.showHint}
                   />
                 ) : (
                     <p className="text-center">Loading...</p>
@@ -264,20 +279,20 @@ class App extends Component {
             )}
 
           {/* GET HINT */}
-          <div className="hintContainer">
-            {this.state.showHint ? (
-              <Hint
-                word={this.state.words[this.state.count]}
-              />
-            ) : (
-                <button
-                  className="btn btn-outline-dark btn-sm getHintBtn"
-                  onClick={this.showHint}
-                >
-                  Get Hint
-            </button>
-              )}
-          </div>
+          {this.state.showHint ? (
+            <Modal
+              open={this.state.showHint}
+              onClose={this.hideHint}
+            >
+              <div className="hintContainer">
+                  <Hint
+                    word={this.state.words[this.state.count]}
+                  />
+              </div>
+            </Modal>
+          ) : (
+            <></>
+          )}
 
           {/* CURTIS PORTFOLIO LINK */}
           <div className="curtis text-center">
