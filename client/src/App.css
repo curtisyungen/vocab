@@ -16,7 +16,7 @@ body {
 
 .curtis-text {
   background: darkgray;
-  border-top: 1px solid darkgray;
+  border-top: 1px solid black;
   color: #000;
   font-size: 12px;
   margin-bottom: 0px !important;
@@ -28,10 +28,6 @@ body {
   font-size: 12px;
   margin: 10px auto;
   width: 75px;
-}
-
-.hintContainer {
-  /* background: #d3d3d3;  */
 }
 
 .home {
@@ -56,7 +52,7 @@ body {
 
 .mainTitle {
   background: rgb(94, 94, 94);
-  border-bottom: 1px solid darkgray;
+  border-bottom: 1px solid black;
   color: white;
   line-height: 1.0;
   margin-bottom: 0px;
