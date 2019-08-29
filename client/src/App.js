@@ -70,13 +70,7 @@ class App extends Component {
     wordsAPI.getAllWords()
       .then((res) => {
         let words = res.data;
-        // this.shuffleWords(words);
-
-        this.setState({
-          count: 0,
-          words: words,
-          complete: false,
-        });
+        this.shuffleWords(words);
       });
   }
 
