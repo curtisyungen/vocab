@@ -106,7 +106,7 @@ class Word extends Component {
 
                 {/* WORD */}
                 <div className="word">
-                    {this.props.word.word}
+                    {this.props.word.word.toLowerCase()}
                 </div>
 
                 {/* SPEAK ICON */}
