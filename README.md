@@ -45,5 +45,5 @@ Installation instructions for Node.js can be found here: https://nodejs.org/en/d
 
 ### Screenshots
 
-![](./client/src/images/screenshot2.png)
+![](./client/src/images/screenshot1.png)
 <br/>
