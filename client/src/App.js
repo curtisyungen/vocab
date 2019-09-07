@@ -84,6 +84,8 @@ class App extends Component {
 
     this.setState({
       unit: unit,
+      complete: false,
+      right: 0,
     });
 
     if (unit !== "All") {
