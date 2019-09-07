@@ -9,6 +9,10 @@ export default {
         return axios.get("/api/words/getAllWords");
     },
 
+    getUnit: function(unit) {
+        return axios.get("/api/words/getUnit/" + unit);
+    },
+
     getWord: function(word) {
         return axios.get("/api/words/getWord/" + word);
     },
