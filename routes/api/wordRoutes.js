@@ -6,6 +6,10 @@ router.get("/getAllWords", (req, res) => {
     controller.getAllWords(req, res);
 });
 
+router.get("/getUnit/:unit", (req, res) => {
+    controller.getUnit(req, res);
+});
+
 router.get("/getWord/:word", (req, res) => {
     controller.getWord(req, res);
 });
