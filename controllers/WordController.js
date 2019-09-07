@@ -17,7 +17,7 @@ class WordController {
     getUnit(req, res) {
         db.Words.findAll({
             where: {
-                unit: req.body.unit,
+                unit: req.params.unit,
             }
         })
         .then((words) => {
