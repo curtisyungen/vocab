@@ -61,6 +61,7 @@ class App extends Component {
       wrong: 0,
       complete: false,
       showHint: false,
+      unit: "all",
     }, () => {
       this.getAllWords();
     });
@@ -89,9 +90,11 @@ class App extends Component {
       wordsAPI.getUnit(unit)
       .then((res) => {
         let words = res.data; 
-        console.log("Words", words);
         this.shuffleWords(words);
       });
+    }
+    else {
+      this.getAllWords();
     }
   }
 
