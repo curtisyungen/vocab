@@ -89,6 +89,7 @@ class App extends Component {
       wordsAPI.getUnit(unit)
       .then((res) => {
         let words = res.data; 
+        console.log("Words", words);
         this.shuffleWords(words);
       });
     }
