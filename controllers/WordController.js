@@ -14,6 +14,20 @@ class WordController {
         });
     }
 
+    getUnit(req, res) {
+        db.Words.findAll({
+            where: {
+                unit: req.body.unit,
+            }
+        })
+        .then((words) => {
+            res.json(words);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
     getWord(req, res) {
         db.Words.findOne({
             where: {

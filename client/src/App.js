@@ -24,6 +24,7 @@ class App extends Component {
       complete: false,
       showHint: false,
       voice: null,
+      unit: "all",
     }
   }
 
@@ -72,6 +73,25 @@ class App extends Component {
         let words = res.data;
         this.shuffleWords(words);
       });
+  }
+
+  // Gets words for specified Unit
+  // Unit can be 1 - 6
+  getUnit = (event) => {
+
+    let unit = event.target.value;
+
+    this.setState({
+      unit: unit,
+    });
+
+    if (unit !== "All") {
+      wordsAPI.getUnit(unit)
+      .then((res) => {
+        let words = res.data; 
+        this.shuffleWords(words);
+      });
+    }
   }
 
   // Shuffles all words into a random order
@@ -218,6 +238,19 @@ class App extends Component {
           <h4 className="mainTitle">
             <img className="logo" src={require(`./images/logo.png`)} alt="GREAT Logo" />
             <span>GRE Argot Tester</span>
+            <select
+              className="selectUnit"
+              onChange={this.getUnit}
+              value={this.state.unit}
+            >
+              <option value="All">All</option>
+              <option value="1">Unit 1</option>
+              <option value="2">Unit 2</option>
+              <option value="3">Unit 3</option>
+              <option value="4">Unit 4</option>
+              <option value="5">Unit 5</option>
+              <option value="6">Unit 6</option>
+            </select>
           </h4>
 
           {/* IMAGE DISPLAY */}
