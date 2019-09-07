@@ -1,5 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
     let Words = sequelize.define("Words", {
+        unit: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
         word: {
             type: DataTypes.STRING,
             allowNull: false,
