@@ -61,9 +61,15 @@ class App extends Component {
       wrong: 0,
       complete: false,
       showHint: false,
-      unit: "All",
     }, () => {
-      this.getAllWords();
+      let unit = this.state.unit;
+
+      if (unit === "All") {
+        this.getAllWords();
+      }
+      else {
+        this.getUnit(unit);
+      }
     });
   }
 
@@ -76,12 +82,19 @@ class App extends Component {
       });
   }
 
+  // Sets unit based on unit selected in dropdown menu
+  setUnit = (event) => {
+    let unit = event.target.value;
+    this.setState({
+      unit: unit,
+    }, () => {
+      this.getUnit(unit);
+    });
+  }
+
   // Gets words for specified Unit
   // Unit can be 1 - 6
-  getUnit = (event) => {
-
-    let unit = event.target.value;
-
+  getUnit = (unit) => {
     this.setState({
       unit: unit,
       complete: false,
@@ -246,7 +259,7 @@ class App extends Component {
             <span>GRE Argot Tester</span>
             <select
               className="selectUnit"
-              onChange={this.getUnit}
+              onChange={this.setUnit}
               value={this.state.unit}
             >
               <option value="All">All</option>
