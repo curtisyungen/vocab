@@ -64,7 +64,7 @@ class App extends Component {
     }, () => {
       let unit = this.state.unit;
 
-      if (unit === "All") {
+      if (unit === "all") {
         this.getAllWords();
       }
       else {
@@ -101,7 +101,7 @@ class App extends Component {
       right: 0,
     });
 
-    if (unit !== "All") {
+    if (unit !== "all") {
       wordsAPI.getUnit(unit)
       .then((res) => {
         let words = res.data; 
@@ -262,7 +262,7 @@ class App extends Component {
               onChange={this.setUnit}
               value={this.state.unit}
             >
-              <option value="All">All</option>
+              <option value="all">All</option>
               <option value="1">Unit 1</option>
               <option value="2">Unit 2</option>
               <option value="3">Unit 3</option>
