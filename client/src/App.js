@@ -61,6 +61,7 @@ class App extends Component {
       wrong: 0,
       complete: false,
       showHint: false,
+      unit: "All",
     }, () => {
       this.getAllWords();
     });
