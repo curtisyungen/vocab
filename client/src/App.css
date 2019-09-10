@@ -91,13 +91,28 @@ body {
   width: 200px;
 }
 
+.reviewContainer {
+  font-size: 13px;
+  margin-top: 25px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.reviewContainer::-webkit-scrollbar { 
+  width: 5px !important 
+}
+
 .right {
-  color: darkgreen;
   display: block;
+}
+
+.rightLabel {
+  font-size: 14px;
 }
 
 .rightWords {
   background: lightgreen;
+  color: darkgreen;
   float: left;
   height: auto;
   padding: 15px;
@@ -116,12 +131,16 @@ body {
 }
 
 .wrong {
-  color: darkred;
   display: block;
+}
+
+.wrongLabel {
+  font-size: 14px;
 }
 
 .wrongWords {
   background: rgb(255, 99, 99);
+  color: darkred;
   float: right;
   height: auto;
   padding: 15px;
