@@ -136,7 +136,7 @@ class App extends Component {
       .then((res) => {
         let words = res.data;
         this.shuffleWords(words);
-        
+
         // this.setState({
         //   count: 0,
         //   words: words,
@@ -425,14 +425,14 @@ class App extends Component {
               onClose={this.hideReview}
             >
               <div className="reviewContainer">
-                <div className="reviewDefinition">
+                <div className="reviewTop">
                   {/* WORD */}
                   <div className="reviewWord">{this.state.review_word}</div>
 
                   {this.state.review_synonyms && this.state.review_synonyms.length > 0 ? (
                     <span>
                       {/* DEFINITION */}
-                      <div>
+                      <div className="reviewDefinition">
                         <span className="reviewTitle">Definition: </span>
                         {this.state.review_definition}
                       </div>

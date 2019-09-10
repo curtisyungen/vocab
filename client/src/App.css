@@ -96,9 +96,7 @@ body {
 }
 
 .reviewDefinition {
-  font-size: 13px;
-  margin-bottom: 15px;
-  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .reviewPrompt {
@@ -115,6 +113,12 @@ body {
 
 .reviewTitle {
   font-weight: 700;
+}
+
+.reviewTop {
+  font-size: 13px;
+  margin-bottom: 15px;
+  margin-top: 25px;
 }
 
 .reviewWord {
