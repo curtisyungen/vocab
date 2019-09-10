@@ -23,6 +23,7 @@ class App extends Component {
       prevCorrect: null,
       complete: false,
       showHint: false,
+      showReview: false,
       voice: null,
       unit: "all",
     }
@@ -61,6 +62,7 @@ class App extends Component {
       wrong: [],
       complete: false,
       showHint: false,
+      showReview: false,
     }, () => {
       let unit = this.state.unit;
 
@@ -73,9 +75,18 @@ class App extends Component {
     });
   }
 
-  // Reviews words gotten wrong in last game
+  // Opens review modal that shows right/wrong answers from last game
   review = () => {
-    let wrong = this.state.wrong;
+    this.setState({
+      showReview: true,
+    });
+  }
+
+  // Closes reivew modal
+  hideReview = () => {
+    this.setState({
+      showReview: false,
+    });
   }
 
   // Get all words from database and shuffle them
@@ -348,6 +359,43 @@ class App extends Component {
                   <Hint
                     word={this.state.words[this.state.count]}
                   />
+              </div>
+            </Modal>
+          ) : (
+            <></>
+          )}
+
+          {/* REVIEW */}
+          {this.state.showReview ? (
+            <Modal 
+              open={this.state.showReview}
+              onClose={this.hideReview}
+            >
+              <div className="reviewContainer">
+                {/* RIGHT */}
+                <div className="rightWords">
+                {this.state.right ? (
+                  this.state.right.map(right => (
+                    <div className="right">
+                      {right}
+                    </div>
+                  ))
+                ) : (
+                  <></>
+                )}
+                </div>
+                {/* WRONG */}
+                <div className="wrongWords">
+                  {this.state.wrong ? (
+                    this.state.wrong.map(wrong => (
+                      <div className="wrong">
+                        {wrong}
+                      </div>
+                    ))
+                  ) : (
+                    <></>
+                  )}
+                </div>
               </div>
             </Modal>
           ) : (

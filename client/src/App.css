@@ -91,6 +91,19 @@ body {
   width: 200px;
 }
 
+.right {
+  color: darkgreen;
+  display: block;
+}
+
+.rightWords {
+  background: lightgreen;
+  float: left;
+  height: auto;
+  padding: 15px;
+  width: 150px;
+}
+
 .selectUnit {
   background: rgb(91, 91, 91);
   border-radius: 4px;
@@ -100,6 +113,19 @@ body {
   margin-top: 3px;
   padding: 3px;
   width: 80px;
+}
+
+.wrong {
+  color: darkred;
+  display: block;
+}
+
+.wrongWords {
+  background: rgb(255, 99, 99);
+  float: right;
+  height: auto;
+  padding: 15px;
+  width: 150px;
 }
 
 @media only screen and (max-width: 520px) {
