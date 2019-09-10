@@ -165,6 +165,7 @@ class App extends Component {
       unit: unit,
       complete: false,
       right: [],
+      wrong: [],
     });
 
     if (unit !== "all") {
@@ -382,6 +383,7 @@ class App extends Component {
                 this.state.words && this.state.words.length > 0 ? (
                   <Word
                     right={this.state.right}
+                    wrong={this.state.wrong}
                     numWords={this.state.words.length}
                     word={this.state.words[this.state.count]}
                     addRight={this.addRight}
