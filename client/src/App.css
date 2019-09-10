@@ -133,6 +133,7 @@ body {
 }
 
 .review-true {
+  color: black;
   font-weight: 700;
 }
 
@@ -158,6 +159,7 @@ body {
   color: darkgreen;
   float: left;
   height: auto;
+  min-width: 120px;
   padding: 15px;
   width: 50%;
 }
@@ -191,6 +193,7 @@ body {
   color: darkred;
   float: right;
   height: auto;
+  min-width: 120px;
   padding: 15px;
   width: 50%;
 }
