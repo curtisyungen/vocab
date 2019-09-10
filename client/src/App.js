@@ -304,7 +304,7 @@ class App extends Component {
                 </button>
 
                 <button
-                  className="btn btn-warning reviewBtn"
+                  className="btn btn-success reviewBtn"
                   onClick={this.review}
                 >
                   Review
