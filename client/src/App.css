@@ -150,7 +150,6 @@ body {
   color: darkgreen;
   float: left;
   height: auto;
-  min-width: 160px;
   padding: 15px;
   width: 50%;
 }
@@ -180,7 +179,6 @@ body {
   color: darkred;
   float: right;
   height: auto;
-  min-width: 160px;
   padding: 15px;
   width: 50%;
 }
