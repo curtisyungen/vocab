@@ -92,22 +92,53 @@ body {
 }
 
 .reviewContainer {
-  font-size: 12px;
+  max-width: 320px;
+}
+
+.reviewDefinition {
+  font-size: 13px;
+  margin-bottom: 15px;
   margin-top: 25px;
-  max-height: 400px;
+}
+
+.reviewPrompt {
+  font-size: 14px;
+}
+
+.reviewSynonym::after {
+  content: ", ";
+}
+
+.reviewSynonym:last-child::after {
+  content: "";
+}
+
+.reviewTitle {
+  font-weight: 700;
+}
+
+.reviewWord {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.reviewWords {
+  font-size: 13px;
+  max-height: 450px;
   overflow-y: scroll;
 }
 
-.reviewContainer::-webkit-scrollbar { 
-  width: 5px !important 
+.reviewWords::-webkit-scrollbar { 
+  width: 0px !important 
 }
 
 .right {
+  cursor: pointer;
   display: block;
 }
 
 .rightLabel {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .rightWords {
@@ -115,8 +146,9 @@ body {
   color: darkgreen;
   float: left;
   height: auto;
+  min-width: 160px;
   padding: 15px;
-  width: 150px;
+  width: 50%;
 }
 
 .selectUnit {
@@ -131,11 +163,12 @@ body {
 }
 
 .wrong {
+  cursor: pointer;
   display: block;
 }
 
 .wrongLabel {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .wrongWords {
@@ -143,8 +176,9 @@ body {
   color: darkred;
   float: right;
   height: auto;
+  min-width: 160px;
   padding: 15px;
-  width: 150px;
+  width: 50%;
 }
 
 @media only screen and (max-width: 520px) {

@@ -26,6 +26,9 @@ class App extends Component {
       showReview: false,
       voice: null,
       unit: "all",
+      review_definition: null,
+      review_synonyms: null,
+      review_word: "Click on a word below to see its definition.",
     }
   }
 
@@ -63,6 +66,9 @@ class App extends Component {
       complete: false,
       showHint: false,
       showReview: false,
+      review_word: "Click on a word below to see its definition.",
+      review_definition: null,
+      review_synonyms: null,
     }, () => {
       let unit = this.state.unit;
 
@@ -87,16 +93,19 @@ class App extends Component {
       right: right,
       wrong: wrong,
       showReview: true,
+      reviewWord: "Click on a word below to see its definition.",
+      review_definition: null,
+      review_synonyms: null,
     });
   }
 
   // Used to sort words in alphabetical order
   alphabetize = (a, b) => {
     if (a === b) {
-        return 0;
+      return 0;
     }
     else {
-        return (a < b) ? -1 : 1;
+      return (a < b) ? -1 : 1;
     }
   }
 
@@ -104,7 +113,13 @@ class App extends Component {
   getDefinition = (word) => {
     wordsAPI.getWord(word)
       .then((res) => {
-        console.log(res);
+        let word = res.data;
+
+        this.setState({
+          review_definition: word.definition,
+          review_synonyms: JSON.parse(word.synonyms),
+          review_word: word.word,
+        });
       });
   }
 
@@ -121,6 +136,12 @@ class App extends Component {
       .then((res) => {
         let words = res.data;
         this.shuffleWords(words);
+        
+        // this.setState({
+        //   count: 0,
+        //   words: words,
+        //   complete: false,
+        // });
       });
   }
 
@@ -145,10 +166,16 @@ class App extends Component {
 
     if (unit !== "all") {
       wordsAPI.getUnit(unit)
-      .then((res) => {
-        let words = res.data; 
-        this.shuffleWords(words);
-      });
+        .then((res) => {
+          let words = res.data;
+          this.shuffleWords(words);
+
+          // this.setState({
+          //   count: 0,
+          //   words: words,
+          //   complete: false,
+          // });
+        });
     }
     else {
       this.getAllWords();
@@ -248,7 +275,7 @@ class App extends Component {
 
   // Closes hint modal
   hideHint = () => {
-    this.setState({ 
+    this.setState({
       showHint: false,
     });
   }
@@ -382,62 +409,82 @@ class App extends Component {
               onClose={this.hideHint}
             >
               <div className="hintContainer">
-                  <Hint
-                    word={this.state.words[this.state.count]}
-                  />
+                <Hint
+                  word={this.state.words[this.state.count]}
+                />
               </div>
             </Modal>
           ) : (
-            <></>
-          )}
+              <></>
+            )}
 
-          {/* REVIEW */}
+          {/* REVIEW MODAL */}
           {this.state.showReview ? (
-            <Modal 
+            <Modal
               open={this.state.showReview}
               onClose={this.hideReview}
             >
-              <div className="reviewDefinition">
-
-              </div>
               <div className="reviewContainer">
-                {/* RIGHT */}
-                <div className="rightWords">
-                  <p className="rightLabel">Right</p>
-                  {this.state.right ? (
-                    this.state.right.map(right => (
-                      <div 
-                        className="right"
-                        onClick={this.getDefinition.bind(null, right)}
-                      >
-                        {right}
+                <div className="reviewDefinition">
+                  {/* WORD */}
+                  <div className="reviewWord">{this.state.review_word}</div>
+
+                  {this.state.review_synonyms && this.state.review_synonyms.length > 0 ? (
+                    <span>
+                      {/* DEFINITION */}
+                      <div>
+                        <span className="reviewTitle">Definition: </span>
+                        {this.state.review_definition}
                       </div>
-                    ))
+                      {/* SYNONYMS */}
+                      <span className="reviewTitle">Synonyms:&nbsp;</span>
+                      {this.state.review_synonyms.map(syn => (
+                        <span className="reviewSynonym">{syn}</span>
+                      ))}
+                    </span>
                   ) : (
-                    <></>
-                  )}
+                      <></>
+                    )}
                 </div>
-                {/* WRONG */}
-                <div className="wrongWords">
-                  <p className="wrongLabel">Wrong</p>
-                  {this.state.wrong ? (
-                    this.state.wrong.map(wrong => (
-                      <div 
-                        className="wrong"
-                        onClick={this.getDefinition.bind(null, wrong)}
-                      >
-                        {wrong}
-                      </div>
-                    ))
-                  ) : (
-                    <></>
-                  )}
+                <div className="reviewWords">
+                  {/* RIGHT */}
+                  <div className="rightWords">
+                    <p className="rightLabel">Right</p>
+                    {this.state.right ? (
+                      this.state.right.map(right => (
+                        <div
+                          className="right"
+                          onClick={this.getDefinition.bind(null, right)}
+                        >
+                          {right}
+                        </div>
+                      ))
+                    ) : (
+                        <></>
+                      )}
+                  </div>
+                  {/* WRONG */}
+                  <div className="wrongWords">
+                    <p className="wrongLabel">Wrong</p>
+                    {this.state.wrong ? (
+                      this.state.wrong.map(wrong => (
+                        <div
+                          className="wrong"
+                          onClick={this.getDefinition.bind(null, wrong)}
+                        >
+                          {wrong}
+                        </div>
+                      ))
+                    ) : (
+                        <></>
+                      )}
+                  </div>
                 </div>
               </div>
             </Modal>
           ) : (
-            <></>
-          )}
+              <></>
+            )}
 
           {/* CURTIS PORTFOLIO LINK */}
           <div className="curtis text-center">
