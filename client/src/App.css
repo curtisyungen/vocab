@@ -92,7 +92,7 @@ body {
 }
 
 .reviewContainer {
-  font-size: 13px;
+  font-size: 12px;
   margin-top: 25px;
   max-height: 400px;
   overflow-y: scroll;
@@ -107,7 +107,7 @@ body {
 }
 
 .rightLabel {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .rightWords {
@@ -135,7 +135,7 @@ body {
 }
 
 .wrongLabel {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .wrongWords {

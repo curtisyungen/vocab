@@ -77,9 +77,27 @@ class App extends Component {
 
   // Opens review modal that shows right/wrong answers from last game
   review = () => {
+    let right = this.state.right;
+    let wrong = this.state.wrong;
+
+    right.sort(this.alphabetize);
+    wrong.sort(this.alphabetize);
+
     this.setState({
+      right: right,
+      wrong: wrong,
       showReview: true,
     });
+  }
+
+  // Used to sort words in alphabetical order
+  alphabetize = (a, b) => {
+    if (a === b) {
+        return 0;
+    }
+    else {
+        return (a < b) ? -1 : 1;
+    }
   }
 
   // Closes reivew modal
