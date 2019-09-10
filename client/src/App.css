@@ -67,7 +67,9 @@ body {
 }
 
 .playAgainBtn {
-  margin-top: 50px;
+  display: block;
+  margin: 25px auto;
+  margin-bottom: 10px;
   width: 200px;
 }
 
@@ -81,6 +83,12 @@ body {
   background: rgb(247, 53, 53);
   border-bottom: 1px solid darkred;
   border-top: 1px solid darkred;
+}
+
+.reviewBtn {
+  margin: 0px auto;
+  margin-bottom: 25px;
+  width: 200px;
 }
 
 .selectUnit {
