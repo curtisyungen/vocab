@@ -127,6 +127,9 @@ class App extends Component {
   hideReview = () => {
     this.setState({
       showReview: false,
+      review_definition: null,
+      review_synonyms: null,
+      review_word: "Click on a word below to see its definition.",
     });
   }
 
