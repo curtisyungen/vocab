@@ -31,7 +31,7 @@ class WordController {
     getWord(req, res) {
         db.Words.findOne({
             where: {
-                word: req.body.word,
+                word: req.params.word,
             }
         })
         .then((word) => {
