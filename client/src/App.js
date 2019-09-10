@@ -456,7 +456,7 @@ class App extends Component {
                     {this.state.right ? (
                       this.state.right.map(right => (
                         <div
-                          className="right"
+                          className={`right review-${this.state.review_word === right}`}
                           onClick={this.getDefinition.bind(null, right)}
                         >
                           {right}
@@ -472,7 +472,7 @@ class App extends Component {
                     {this.state.wrong ? (
                       this.state.wrong.map(wrong => (
                         <div
-                          className="wrong"
+                          className={`wrong review-${this.state.review_word === wrong}`}
                           onClick={this.getDefinition.bind(null, wrong)}
                         >
                           {wrong}

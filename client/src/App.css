@@ -132,6 +132,10 @@ body {
   overflow-y: scroll;
 }
 
+.review-true {
+  font-weight: 700;
+}
+
 .reviewWords::-webkit-scrollbar { 
   width: 0px !important 
 }
@@ -139,6 +143,10 @@ body {
 .right {
   cursor: pointer;
   display: block;
+}
+
+.right:hover {
+  color: black;
 }
 
 .rightLabel {
@@ -168,6 +176,10 @@ body {
 .wrong {
   cursor: pointer;
   display: block;
+}
+
+.wrong:hover {
+  color: black;
 }
 
 .wrongLabel {
