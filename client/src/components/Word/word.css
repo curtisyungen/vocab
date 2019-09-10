@@ -15,6 +15,11 @@
     top: 10px;
 }
 
+.counter div {
+    display: inline-block;
+    margin-right: 2px;
+}
+
 .counter div::after {
     content: " | ";
 }
