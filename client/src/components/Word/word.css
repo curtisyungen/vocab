@@ -15,6 +15,26 @@
     top: 10px;
 }
 
+.counter div::after {
+    content: " | ";
+}
+
+.counter div:last-child::after {
+    content: "";
+}
+
+.numRight {
+    color: darkgreen;
+}
+
+.numWrong {
+    color: darkred;
+}
+
+.numWords {
+    color: black;
+}
+
 .speakIcon {
     cursor: pointer;
     height: 20px;
