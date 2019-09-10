@@ -17,8 +17,8 @@ class App extends Component {
     this.state = {
       words: null,
       count: null,
-      right: null,
-      wrong: null,
+      right: [],
+      wrong: [],
       message: "Which is the closest synonym to the bolded word below?",
       prevCorrect: null,
       complete: false,
@@ -57,8 +57,8 @@ class App extends Component {
   newGame = () => {
     this.setState({
       count: 0,
-      right: 0,
-      wrong: 0,
+      right: [],
+      wrong: [],
       complete: false,
       showHint: false,
     }, () => {
@@ -71,6 +71,11 @@ class App extends Component {
         this.getUnit(unit);
       }
     });
+  }
+
+  // Reviews words gotten wrong in last game
+  review = () => {
+    let wrong = this.state.wrong;
   }
 
   // Get all words from database and shuffle them
@@ -152,9 +157,9 @@ class App extends Component {
   }
 
   // Adds one to total of right answers
-  addRight = () => {
+  addRight = (word) => {
     let right = this.state.right;
-    right += 1;
+    right.push(word);
 
     this.setState({
       right: right,
@@ -164,9 +169,9 @@ class App extends Component {
   }
 
   // Adds one to total of wrong answers
-  addWrong = () => {
+  addWrong = (word) => {
     let wrong = this.state.wrong;
-    wrong += 1;
+    wrong.push(word);
 
     this.setState({
       wrong: wrong,
@@ -290,12 +295,21 @@ class App extends Component {
 
             {/* PLAY AGAIN BUTTON */}
             {this.state.complete ? (
-              <button
-                className="btn btn-warning playAgainBtn"
-                onClick={this.newGame}
-              >
-                Replay
-            </button>
+              <span>
+                <button
+                  className="btn btn-warning playAgainBtn"
+                  onClick={this.newGame}
+                >
+                  Replay
+                </button>
+
+                <button
+                  className="btn btn-warning reviewBtn"
+                  onClick={this.review}
+                >
+                  Review
+                </button>
+              </span>
             ) : (
                 // WORD DISPLAY
                 this.state.words && this.state.words.length > 0 ? (

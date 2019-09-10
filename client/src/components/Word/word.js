@@ -81,10 +81,10 @@ class Word extends Component {
         let rightChoice = this.state.rightChoice;
 
         if (rightChoice === choice) {
-            this.props.addRight();
+            this.props.addRight(word);
         }
         else {
-            this.props.addWrong();
+            this.props.addWrong(word);
         }
 
         this.props.getRightChoice(word, rightChoice, choice);
@@ -101,7 +101,7 @@ class Word extends Component {
 
                 {/* COUNTER */}
                 <div className="counter">
-                    <div>{this.props.right} / {this.props.numWords} right</div>
+                    <div>{this.props.right.length} / {this.props.numWords} right</div>
                 </div>
 
                 {/* WORD */}
