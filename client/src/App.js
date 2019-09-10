@@ -374,18 +374,20 @@ class App extends Component {
               <div className="reviewContainer">
                 {/* RIGHT */}
                 <div className="rightWords">
-                {this.state.right ? (
-                  this.state.right.map(right => (
-                    <div className="right">
-                      {right}
-                    </div>
-                  ))
-                ) : (
-                  <></>
-                )}
+                  <p className="rightLabel">Right</p>
+                  {this.state.right ? (
+                    this.state.right.map(right => (
+                      <div className="right">
+                        {right}
+                      </div>
+                    ))
+                  ) : (
+                    <></>
+                  )}
                 </div>
                 {/* WRONG */}
                 <div className="wrongWords">
+                  <p className="wrongLabel">Wrong</p>
                   {this.state.wrong ? (
                     this.state.wrong.map(wrong => (
                       <div className="wrong">
