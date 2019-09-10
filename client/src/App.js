@@ -100,6 +100,14 @@ class App extends Component {
     }
   }
 
+  // Gets definition for individual word
+  getDefinition = (word) => {
+    wordsAPI.getWord(word)
+      .then((res) => {
+        console.log(res);
+      });
+  }
+
   // Closes reivew modal
   hideReview = () => {
     this.setState({
@@ -389,13 +397,19 @@ class App extends Component {
               open={this.state.showReview}
               onClose={this.hideReview}
             >
+              <div className="reviewDefinition">
+
+              </div>
               <div className="reviewContainer">
                 {/* RIGHT */}
                 <div className="rightWords">
                   <p className="rightLabel">Right</p>
                   {this.state.right ? (
                     this.state.right.map(right => (
-                      <div className="right">
+                      <div 
+                        className="right"
+                        onClick={this.getDefinition.bind(null, right)}
+                      >
                         {right}
                       </div>
                     ))
@@ -408,7 +422,10 @@ class App extends Component {
                   <p className="wrongLabel">Wrong</p>
                   {this.state.wrong ? (
                     this.state.wrong.map(wrong => (
-                      <div className="wrong">
+                      <div 
+                        className="wrong"
+                        onClick={this.getDefinition.bind(null, wrong)}
+                      >
                         {wrong}
                       </div>
                     ))
