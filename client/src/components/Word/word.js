@@ -101,7 +101,9 @@ class Word extends Component {
 
                 {/* COUNTER */}
                 <div className="counter">
-                    <div>{this.props.right.length} / {this.props.numWords} right</div>
+                    <div className="numRight">{this.props.right.length}</div>
+                    <div className="numWrong">{this.props.wrong.length} </div>
+                    <div className="numWords">{this.props.numWords}</div>
                 </div>
 
                 {/* WORD */}
