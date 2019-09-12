@@ -16,7 +16,7 @@ A user may:
 * Select groups of words (units) for more focused practice.
 * Review words answered correctly and incorrectly after each round of testing.
 
-Check out the project here: https://vocab-cjy.herokuapp.com.
+**Check out the project here:** https://vocab-cjy.herokuapp.com.
 
 <hr/>
 
