@@ -7,7 +7,7 @@
 
 August 2019
 
-The GRE Argot Tester (obviously named for the acronym) is a simple web application I created to help my girlfriend study for the GRE. The program tests the user on 500 of the most common words seen on the GRE. 
+The GRE Argot Tester (obviously named for the acronym) is a simple web application I created to help my girlfriend study for the GRE. The program tests the user on over 480 of the most common words seen on the GRE. 
 
 A user may:
 * Set an image and sentence for each word to aid in memorization and understanding.
