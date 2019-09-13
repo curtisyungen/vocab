@@ -343,6 +343,7 @@ class App extends Component {
               <option value="5">Unit 5</option>
               <option value="6">Unit 6</option>
               <option value="7">Unit 7</option>
+              <option value="8">Unit 8</option>
             </select>
           </h4>
 
